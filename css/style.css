@@ -1,0 +1,297 @@
+:root {
+  --color-dark: #121212;
+  --color-black: #000000;
+  --color-accent: #343a40;
+  --color-gray: #6c757d;
+  --color-light: #f8f9fa;
+  --color-secondary: #343a40;
+  --font-size-small: 0.875rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 1.25rem;
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  position: relative; /* Added for better positioning context */
+}
+
+/* Image positioning */
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.object-position-top {
+  object-position: top;
+}
+
+/* Animation Classes */
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Line font style */
+.line-font {
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+
+/* Parallax effect for sections */
+.parallax-section {
+  position: relative;
+  z-index: 10;
+  margin-top: -100px; /* This will make the section overlap with the previous section */
+}
+
+/* Scrolling text banner */
+.scrolling-text-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 1rem 0;
+  background-color: transparent;
+  z-index: 20; /* Higher z-index to appear above the hero section */
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollText 100s linear infinite; /* Slowed down animation from 80s to 100s */
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+  padding-right: 100px; /* Add padding to ensure gap between repeated content */
+}
+
+/* Remove the pseudo-elements approach and fix the content repetition in HTML instead */
+.scrolling-text-container::before,
+.scrolling-text-container::after {
+  content: none;
+}
+
+.scrolling-text span {
+  display: inline-block;
+  animation: waveText 5s ease-in-out infinite; /* Slowed down wave animation from 4s to 5s */
+}
+
+/* Generate animation delays for each letter (up to 50 letters) */
+.scrolling-text span:nth-child(1) { animation-delay: 0.00s; }
+.scrolling-text span:nth-child(2) { animation-delay: 0.04s; }
+.scrolling-text span:nth-child(3) { animation-delay: 0.08s; }
+.scrolling-text span:nth-child(4) { animation-delay: 0.12s; }
+.scrolling-text span:nth-child(5) { animation-delay: 0.16s; }
+.scrolling-text span:nth-child(6) { animation-delay: 0.20s; }
+.scrolling-text span:nth-child(7) { animation-delay: 0.24s; }
+.scrolling-text span:nth-child(8) { animation-delay: 0.28s; }
+.scrolling-text span:nth-child(9) { animation-delay: 0.32s; }
+.scrolling-text span:nth-child(10) { animation-delay: 0.36s; }
+.scrolling-text span:nth-child(11) { animation-delay: 0.40s; }
+.scrolling-text span:nth-child(12) { animation-delay: 0.44s; }
+.scrolling-text span:nth-child(13) { animation-delay: 0.48s; }
+.scrolling-text span:nth-child(14) { animation-delay: 0.52s; }
+.scrolling-text span:nth-child(15) { animation-delay: 0.56s; }
+.scrolling-text span:nth-child(16) { animation-delay: 0.60s; }
+.scrolling-text span:nth-child(17) { animation-delay: 0.64s; }
+.scrolling-text span:nth-child(18) { animation-delay: 0.68s; }
+.scrolling-text span:nth-child(19) { animation-delay: 0.72s; }
+.scrolling-text span:nth-child(20) { animation-delay: 0.76s; }
+.scrolling-text span:nth-child(21) { animation-delay: 0.80s; }
+.scrolling-text span:nth-child(22) { animation-delay: 0.84s; }
+.scrolling-text span:nth-child(23) { animation-delay: 0.88s; }
+.scrolling-text span:nth-child(24) { animation-delay: 0.92s; }
+.scrolling-text span:nth-child(25) { animation-delay: 0.96s; }
+.scrolling-text span:nth-child(26) { animation-delay: 1.00s; }
+.scrolling-text span:nth-child(27) { animation-delay: 1.04s; }
+.scrolling-text span:nth-child(28) { animation-delay: 1.08s; }
+.scrolling-text span:nth-child(29) { animation-delay: 1.12s; }
+.scrolling-text span:nth-child(30) { animation-delay: 1.16s; }
+.scrolling-text span:nth-child(31) { animation-delay: 1.20s; }
+.scrolling-text span:nth-child(32) { animation-delay: 1.24s; }
+.scrolling-text span:nth-child(33) { animation-delay: 1.28s; }
+.scrolling-text span:nth-child(34) { animation-delay: 1.32s; }
+.scrolling-text span:nth-child(35) { animation-delay: 1.36s; }
+.scrolling-text span:nth-child(36) { animation-delay: 1.40s; }
+.scrolling-text span:nth-child(37) { animation-delay: 1.44s; }
+.scrolling-text span:nth-child(38) { animation-delay: 1.48s; }
+.scrolling-text span:nth-child(39) { animation-delay: 1.52s; }
+.scrolling-text span:nth-child(40) { animation-delay: 1.56s; }
+.scrolling-text span:nth-child(41) { animation-delay: 1.60s; }
+.scrolling-text span:nth-child(42) { animation-delay: 1.64s; }
+.scrolling-text span:nth-child(43) { animation-delay: 1.68s; }
+.scrolling-text span:nth-child(44) { animation-delay: 1.72s; }
+.scrolling-text span:nth-child(45) { animation-delay: 1.76s; }
+.scrolling-text span:nth-child(46) { animation-delay: 1.80s; }
+.scrolling-text span:nth-child(47) { animation-delay: 1.84s; }
+.scrolling-text span:nth-child(48) { animation-delay: 1.88s; }
+.scrolling-text span:nth-child(49) { animation-delay: 1.92s; }
+.scrolling-text span:nth-child(50) { animation-delay: 1.96s; }
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Move left by entire width for seamless looping */
+  }
+}
+
+@keyframes waveText {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* Reduced wave height from -20px to -15px */
+  }
+  25%, 75% {
+    transform: translateY(8px); /* Reduced downward movement from 10px to 8px */
+  }
+}
+
+/* Fade in text animation */
+.fade-in-text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.4s forwards;
+}
+
+.fade-in-text span:nth-child(1) { animation-delay: 0.1s; }
+.fade-in-text span:nth-child(2) { animation-delay: 0.2s; }
+.fade-in-text span:nth-child(3) { animation-delay: 0.3s; }
+.fade-in-text span:nth-child(4) { animation-delay: 0.5s; }
+.fade-in-text span:nth-child(5) { animation-delay: 0.6s; }
+.fade-in-text span:nth-child(6) { animation-delay: 0.7s; }
+.fade-in-text span:nth-child(7) { animation-delay: 0.8s; }
+.fade-in-text span:nth-child(8) { animation-delay: 0.9s; }
+.fade-in-text span:nth-child(9) { animation-delay: 1.0s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Float animation for pyramid */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* Navbar styling */
+.navbar.bg-transparent {
+    transition: background-color 0.3s ease;
+}
+
+/* Make navbar background transparent even when scrolling */
+.navbar.bg-transparent.scrolled {
+    background-color: transparent !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scrolling-text {
+    font-size: 1rem;
+  }
+  
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .hidden {
+    transition: all 0.5s;
+  }
+}
+
+/* Service Cards Styling - Enhanced for the What We Do section */
+#services {
+    padding: 100px 0;
+}
+
+#services .container-fluid {
+    max-width: 90%;
+}
+
+.service-card {
+    transform: translateY(0);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    min-height: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.service-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.service-card:hover .service-hover-content {
+    opacity: 1 !important;
+}
+
+.service-hover-content {
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.row.g-5 {
+    margin: 0 -30px;
+}
+
+.row.g-5 > .col-md-4 {
+    padding: 0 30px;
+}
+
+/* Make the section bigger and improved spacing */
+#services.vh-100 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .service-card {
+        min-height: 350px;
+    }
+    
+    .row.g-5 {
+        margin: 0 -15px;
+    }
+    
+    .row.g-5 > .col-md-4 {
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Animation for service cards */
+.service-card .service-icon {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+

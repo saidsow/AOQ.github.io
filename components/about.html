@@ -1,0 +1,638 @@
+<!-- About Us -->
+<section class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="outlined-text who text-start text-uppercase fw-bold">Who we are</h1>
+            </div>
+        </div>
+        
+        <!-- Pyramid Layout with Hover Animation -->
+        <div class="pyramid-container my-5">
+            <div class="pyramid">
+                <div class="pyramid-top">
+                    <div class="pyramid-image">
+                        <img src="assets/image (1).png" class="img-fluid rounded-3" alt="Service 1">
+                        <div class="image-overlay">
+                            <h3>Athlete Representation</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="pyramid-bottom">
+                    <div class="pyramid-image pyramid-left">
+                        <img src="assets/image (2).png" class="img-fluid rounded-3" alt="Service 2">
+                        <div class="image-overlay">
+                            <h3>Brand Management</h3>
+                        </div>
+                    </div>
+                    <div class="pyramid-image pyramid-right">
+                        <img src="assets/image.png" class="img-fluid rounded-3" alt="Service 3">
+                        <div class="image-overlay">
+                            <h3>Media Production</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Introduction -->
+<section class="bg-light text-dark py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-uppercase text-secondary opacity-50 text-shadow">Meet the Team</h3>
+            </div>
+            <hr class="border-dark border-2 fw-bold">
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="assets/matt.jpg" alt="Matt Aptaker" class="img-fluid rounded" style="height: 300px;">
+            </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <h3 class="mb-3">Matt Aptaker</h3>
+                <p>Matt Aptaker is a dedicated sports professional with a passion for helping athletes achieve their full potential. With a background in sports management and marketing, Matt brings a wealth of experience to the AOQ Sports team.</p>
+                <p>Matt has worked with numerous athletes and sports organizations, providing strategic guidance and support to help them reach their goals. His expertise in branding and promotion has been instrumental in elevating the profiles of many athletes.</p>
+                <p>At AOQ Sports, Matt is responsible for overseeing the development and execution of marketing campaigns, ensuring that our clients receive the best possible exposure. He is committed to building strong relationships with our clients and helping them succeed both on and off the field.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="assets/artak.jpg" alt="Artak Petrosyan" class="img-fluid rounded" style="height: 300px;">
+            </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <h3 class="mb-3">Artak "The Armenian Nightmare" Petrosyan</h3>
+                <p>Artak "The Armenian Nightmare," Petrosyan, is a retired professional mixed martial artist and a former Colorado Combat Club Champion. Competing in the welterweight division. With over 15 years in the sport, he is a seasoned MMA veteran who holds a black belt in Brazilian Jiu-Jitsu from Gracie Barra.</p>
+                <p>Artak began his professional career in regional promotions, quickly making a mark with his dynamic fighting style and resilience in the cage. He secured the Colorado Combat Club Welterweight Championship, and built a reputation as a fierce competitor who always left it all in the cage.</p>
+                <p>Now retired from active competition, Artak has transitioned his passion for MMA into management and mentorship. Leveraging his years of experience, he is committed to guiding the next generation of fighters, helping them navigate their careers, and achieve success both inside and outside the cage.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Images section of lifestyle -->
+<section class="bg-dark text-white position-relative">
+    <div class="container position-relative">
+        <div class="row justify-content-center vh-400">
+            <div class="col-6">
+                <p class="text-uppercase fw-bold text-center sticky-top pt-5 quan-definition" style="top: 50vh;">
+                    quan
+                    /kwän/
+                    noun The total package of success, encompassing not just wealth but also respect, love, and personal fulfillment.
+                </p>
+                <div class="parallax-image parallax-image-1">
+                    <img src="assets/Jay_LeoRever.jpg" alt="" height="420px">
+                </div>
+                <div class="parallax-image parallax-image-2">
+                    <img src="assets/Fighters/Ilima.png" alt="" height="350px">
+                </div>
+                <div class="parallax-image parallax-image-3">
+                    <img src="assets/race.jpg" alt="" height="220px">
+                </div>
+                <div class="parallax-image parallax-image-4">
+                    <img src="assets/tennis-5018589_1280.jpg" alt="" height="320px">
+                </div>
+                <div class="parallax-image parallax-image-5">
+                    <img src="assets/Screenshot 2024-01-01 190744.png" alt="" height="300px">
+                </div>
+                <div class="parallax-image parallax-image-6">
+                    <img src="assets/Screenshot 2024-01-01 183537.png" alt="" height="420px">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CSS for About Page -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+    
+    .outlined-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10rem;
+        color: transparent;
+        -webkit-text-stroke: 1px #ffffff;
+    }
+    
+    /* Pyramid Layout with Float Animation */
+    .pyramid-container {
+        height: 600px;
+        position: relative;
+    }
+    
+    .pyramid {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    
+    .pyramid-top {
+        position: absolute;
+        width: 280px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 40px;
+        z-index: 3;
+    }
+    
+    .pyramid-bottom {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        top: 320px;
+        z-index: 2;
+    }
+    
+    .pyramid-image {
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border-radius: 15px;
+        overflow: hidden;
+        height: 280px;
+        width: 280px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .pyramid-left, .pyramid-right {
+        height: 280px;
+        width: 280px;
+    }
+    
+    .pyramid-image:hover {
+        box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    }
+    
+    .pyramid-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, transparent);
+        padding: 20px;
+        color: white;
+    }
+    
+    .image-overlay h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    /* Floating animation */
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+    
+    .outlined-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10rem;
+        color: transparent;
+        -webkit-text-stroke: 1px #ffffff;
+    }
+    
+    /* Pyramid Layout with Circular Rotation */
+    .pyramid-container {
+        perspective: 1000px;
+        height: 600px;
+        position: relative;
+        overflow: visible;
+    }
+    
+    .pyramid {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+    }
+    
+    .pyramid-top {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 280px;
+    }
+    
+    .pyramid-bottom {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        z-index: 1;
+    }
+    
+    .pyramid-image {
+        position: absolute;
+        transition: all 0.5s ease-in-out;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border-radius: 15px;
+        overflow: hidden;
+        height: 280px;
+        width: 280px;
+    }
+    
+    .pyramid-left, .pyramid-right {
+        height: 280px;
+        width: 280px;
+    }
+    
+    .pyramid-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, transparent);
+        padding: 20px;
+        color: white;
+    }
+    
+    .image-overlay h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    /* New Service Box Style matching image (1) */
+    .image1-service-box {
+        background-color: #333;
+        border-radius: 10px;
+        padding: 30px 25px;
+        position: relative;
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .image1-service-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    }
+    
+    .service-icon-wrapper {
+        margin-bottom: 20px;
+    }
+    
+    .service-icon-circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #444 0%, #222 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        margin: 0 auto;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    .service-heading {
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    
+    .service-text {
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    /* New Service Card Styles */
+    .service-card {
+        height: 300px;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+    
+    .service-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.8s ease;
+    }
+    
+    .service-card:hover .service-image {
+        transform: scale(1.1);
+    }
+    
+    .service-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 70%, transparent);
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .service-title-lg {
+        font-size: 1.75rem;
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        transition: all 0.3s ease;
+    }
+    
+    .service-description {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        margin-bottom: 0;
+    }
+    
+    .service-card:hover .service-description {
+        max-height: 100px;
+        opacity: 1;
+        margin-top: 10px;
+    }
+    
+    /* Updated Service Box Alt Styles */
+    .service-box-alt {
+        padding: 25px;
+        background-color: rgba(50, 50, 50, 0.8);
+        border-left: 3px solid #444;
+        text-align: left;
+        transition: 0.3s all;
+        border-radius: 8px;
+        height: 100%;
+    }
+    
+    .service-box-alt:hover {
+        background-color: rgba(70, 70, 70, 0.9);
+        border-left: 3px solid #777;
+        transform: translateX(5px);
+        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .service-icon-alt {
+        font-size: 28px;
+        margin-bottom: 15px;
+        display: inline-block;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .service-title-alt {
+        font-weight: 600;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        position: relative;
+    }
+    
+    .service-title-alt:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 40px;
+        height: 2px;
+        background-color: #777;
+        transition: width 0.3s ease;
+    }
+    
+    .service-box-alt:hover .service-title-alt:after {
+        width: 70px;
+    }
+    
+    .vh-75 {
+        height: 75vh;
+    }
+    
+    .vh-400 {
+        height: 200vh;
+    }
+    
+    /* Parallax effect for images */
+    .parallax-image {
+        position: absolute;
+        will-change: transform;
+        max-height: 100%;
+    }
+    
+    .parallax-image-1 {
+        top: 5%;
+        left: 5%;
+        transform: translateY(0);
+    }
+    
+    .parallax-image-2 {
+        top: 8%;
+        left: 70%;
+        transform: translateY(0);
+    }
+    
+    .parallax-image-3 {
+        top: 30%;
+        left: 8%;
+        transform: translateY(0);
+    }
+    
+    .parallax-image-4 {
+        top: 30%;
+        left: 60%;
+        transform: translateY(0);
+    }
+    
+    .parallax-image-5 {
+        top: 60%;
+        left: 4%;
+        transform: translateY(0);
+    }
+    
+    .parallax-image-6 {
+        top: 60%;
+        left: 65%;
+        transform: translateY(0);
+    }
+    
+    .quan-definition {
+        font-size: 2.2rem;
+    }
+    
+    /* Service boxes styling */
+    .service-container {
+        background-color: #d4d4d40f;
+        padding: 40px;
+        border-radius: 16px;
+    }
+    
+    .service-box {
+        padding: 20px;
+        border: 1px solid #eee;
+        background-color: #5b5b5b;
+        text-align: left;
+        transition: 0.3s ease-in-out;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100%;
+    }
+    
+    .service-box:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        transform: translateY(-5px);
+    }
+    
+    .service-icon {
+        font-size: 24px;
+        color: #ff0077;
+        margin-bottom: 10px;
+    }
+    
+    .service-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .who {
+        margin-top: 50px;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .outlined-text {
+            font-size: 2rem;
+        }
+        
+        .pyramid-container {
+            height: 700px;
+        }
+        
+        .pyramid-top {
+            width: 220px;
+            top: 20px;
+        }
+        
+        .pyramid-bottom {
+            flex-direction: column;
+            align-items: center;
+            top: 240px;
+            gap: 20px;
+        }
+        
+        .pyramid-image,
+        .pyramid-left, 
+        .pyramid-right {
+            height: 220px;
+            width: 220px;
+        }
+        
+        .image-overlay h3 {
+            font-size: 1.2rem;
+        }
+        
+        .service-icon-circle {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+        
+        .service-heading {
+            font-size: 1.2rem;
+        }
+        
+        .service-card {
+            height: 200px;
+            margin-bottom: 15px;
+        }
+        
+        .service-title-lg {
+            font-size: 1.2rem;
+        }
+        
+        .service-box-alt {
+            padding: 15px;
+        }
+        
+        .service-title-alt {
+            font-size: 1.1rem;
+        }
+        
+        .parallax-image-1 img,
+        .parallax-image-2 img {
+            height: 200px;
+            width: 100%;
+        }
+        
+        .parallax-image-3 img,
+        .parallax-image-5 img {
+            height: 120px;
+            width: 100%;
+        }
+        
+        .parallax-image-4 img {
+            height: 100px;
+            width: 100%;
+        }
+        
+        .parallax-image-6 img {
+            height: 180px;
+            width: 100%;
+        }
+        
+        .quan-definition {
+            font-size: 1.2rem;
+        }
+        
+        .service-container {
+            padding: 20px;
+            transform: scale(0.9);
+            margin-top: -80px;
+        }
+        
+        .service-box {
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .service-icon {
+            font-size: 20px;
+        }
+        
+        .service-title {
+            font-size: 1rem;
+        }
+        
+        .who {
+            margin-top: 70px;
+        }
+    }
+</style>

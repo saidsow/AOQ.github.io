@@ -1,0 +1,393 @@
+<!-- Toggle Section -->
+<section>
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-start display-1 mb-5 line-font py-5">Careers</h2>
+                <div class="container-fluid">
+                    <input type="checkbox" id="careerToggle" />
+                    <label for="careerToggle" class="label"> </label>
+                    <div class="toggle-labels d-flex justify-content-between mt-2" style="width: 200px">
+                        <span class="text-white">Athletes</span>
+                        <span class="text-white">Agency</span>
+                    </div>
+                </div>
+                <hr class="border-white m-4" style="border-width: 1px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Career Content Section -->
+<section class="bg-dark text-white p-5">
+    <div class="container-fluid">
+        <!-- Athlete Opportunities Section -->
+        <div id="athlete-opportunities">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="text-center mb-4">Opportunities for Athletes</h3>
+                    <p class="lead text-center mb-5">Join our roster of elite athletes and let us take your career to new heights</p>
+                </div>
+            </div>
+            
+            <!-- First row of career cards -->
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <div class="career-card bg-dark p-4 rounded shadow-lg h-100">
+                        <div class="card-header-custom d-flex justify-content-between align-items-center mb-3">
+                            <h4>Representation Services</h4>
+                            <span class="badge bg-secondary rounded-pill">Available</span>
+                        </div>
+                        <p>We're currently accepting new athletes for full representation services, including contract negotiation, brand partnerships, and career management.</p>
+                        <ul class="mt-3">
+                            <li>Professional contract negotiation</li>
+                            <li>Endorsement and sponsorship acquisition</li>
+                            <li>Media training and public relations</li>
+                            <li>Career development planning</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-outline-light" onclick="loadComponent('contact')">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="career-card bg-dark p-4 rounded shadow-lg h-100">
+                        <div class="card-header-custom d-flex justify-content-between align-items-center mb-3">
+                            <h4>Brand Building Program</h4>
+                            <span class="badge bg-secondary rounded-pill">Limited Spots</span>
+                        </div>
+                        <p>Our specialized brand building program helps athletes establish their personal brand and increase market value through strategic positioning and content creation.</p>
+                        <ul class="mt-3">
+                            <li>Personal brand strategy development</li>
+                            <li>Social media growth and management</li>
+                            <li>Content creation and distribution</li>
+                            <li>Brand partnership cultivation</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-outline-light" onclick="loadComponent('contact')">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second row of career cards -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="career-card bg-dark p-4 rounded shadow-lg h-100">
+                        <div class="card-header-custom d-flex justify-content-between align-items-center mb-3">
+                            <h4>Post-Career Transition</h4>
+                            <span class="badge bg-secondary rounded-pill">Ongoing</span>
+                        </div>
+                        <p>Planning for life after competition is essential. Our transition program helps athletes leverage their athletic careers for long-term success in business, media, or other ventures.</p>
+                        <ul class="mt-3">
+                            <li>Career transition planning</li>
+                            <li>Business venture development</li>
+                            <li>Media and broadcasting opportunities</li>
+                            <li>Speaking and appearance engagements</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-outline-light" onclick="loadComponent('contact')">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="career-card bg-dark p-4 rounded shadow-lg h-100">
+                        <div class="card-header-custom d-flex justify-content-between align-items-center mb-3">
+                            <h4>Athlete Development</h4>
+                            <span class="badge bg-secondary rounded-pill">Year-Round</span>
+                        </div>
+                        <p>Our holistic athlete development program focuses on all aspects of an athlete's journey, from performance to personal growth.</p>
+                        <ul class="mt-3">
+                            <li>Financial literacy and planning</li>
+                            <li>Mental performance coaching</li>
+                            <li>Professional network development</li>
+                            <li>Community engagement opportunities</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-outline-light" onclick="loadComponent('contact')">Join Program</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agency Positions Section -->
+        <div id="agency-positions" style="display: none;">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="text-center mb-4">Join Our Team</h3>
+                    <p class="lead text-center mb-5">Be part of a dynamic team that's shaping the future of sports management</p>
+                </div>
+            </div>
+            
+            <!-- First row of agency positions -->
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <div class="career-card bg-dark p-4 rounded shadow-lg h-100">
+                        <div class="card-header-custom d-flex justify-content-between align-items-center mb-3">
+                            <h4>Sports Agent</h4>
+                            <span class="badge bg-secondary rounded-pill">Hiring</span>
+                        </div>
+                        <p>We're seeking experienced sports agents to join our growing team. The ideal candidate will have a proven track record in athlete representation, strong industry connections, and exceptional negotiation skills.</p>
+                        <h5 class="mt-4">Requirements:</h5>
+                        <ul>
+                            <li>3+ years experience in athlete representation</li>
+                            <li>Proven negotiation skills and deal-making ability</li>
+                            <li>Strong network in professional sports</li>
+                            <li>Bachelor's degree (sports management preferred)</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-outline-light" onclick="loadComponent('contact')">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="career-card bg-dark p-4 rounded shadow-lg h-100">
+                        <div class="card-header-custom d-flex justify-content-between align-items-center mb-3">
+                            <h4>Digital Marketing Specialist</h4>
+                            <span class="badge bg-secondary rounded-pill">Hiring</span>
+                        </div>
+                        <p>Join our marketing team to help build and grow our athletes' digital presence. You'll be responsible for creating engaging content, managing social media accounts, and developing digital marketing campaigns.</p>
+                        <h5 class="mt-4">Requirements:</h5>
+                        <ul>
+                            <li>2+ years of digital marketing experience</li>
+                            <li>Strong social media management skills</li>
+                            <li>Content creation and copywriting abilities</li>
+                            <li>Experience with analytics and reporting</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-outline-light" onclick="loadComponent('contact')">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second row of agency positions -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="career-card bg-dark p-4 rounded shadow-lg h-100">
+                        <div class="card-header-custom d-flex justify-content-between align-items-center mb-3">
+                            <h4>Sponsorship Coordinator</h4>
+                            <span class="badge bg-secondary rounded-pill">Hiring</span>
+                        </div>
+                        <p>We're looking for a detail-oriented Sponsorship Coordinator to facilitate partnerships between our athletes and brands. This role involves sponsorship acquisition, relationship management, and partnership activation.</p>
+                        <h5 class="mt-4">Requirements:</h5>
+                        <ul>
+                            <li>Experience in partnership management or sales</li>
+                            <li>Strong communication and presentation skills</li>
+                            <li>Ability to build and maintain professional relationships</li>
+                            <li>Understanding of sports marketing landscape</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-outline-light" onclick="loadComponent('contact')">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="career-card bg-dark p-4 rounded shadow-lg h-100">
+                        <div class="card-header-custom d-flex justify-content-between align-items-center mb-3">
+                            <h4>Talent Scout</h4>
+                            <span class="badge bg-secondary rounded-pill">Hiring</span>
+                        </div>
+                        <p>Help us discover the next generation of athletic talent. This position involves identifying promising athletes, building relationships, and evaluating potential for representation.</p>
+                        <h5 class="mt-4">Requirements:</h5>
+                        <ul>
+                            <li>Deep knowledge of sports landscape</li>
+                            <li>Network within amateur or professional sports</li>
+                            <li>Strong evaluation and assessment skills</li>
+                            <li>Willingness to travel for scouting opportunities</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-outline-light" onclick="loadComponent('contact')">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="bg-secondary text-white py-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h3>What People Say About Working With Us</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="testimonial p-4 bg-dark rounded shadow">
+                    <p class="fst-italic">"Joining AOQ was the best career decision I've made. They've opened doors I never thought possible and truly care about my long-term success."</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <div class="testimonial-img me-3">
+                            <img src="assets/image (1).png" alt="Athlete" class="rounded-circle" width="60" height="60" style="object-fit: cover;">
+                        </div>
+                        <div>
+                            <h5 class="mb-0">John Smith</h5>
+                            <small>Professional MMA Fighter</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial p-4 bg-dark rounded shadow">
+                    <p class="fst-italic">"As a marketing specialist at AOQ, I've had the opportunity to work with amazing athletes and build campaigns that truly make a difference in their careers."</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <div class="testimonial-img me-3">
+                            <img src="assets/image (2).png" alt="Team Member" class="rounded-circle" width="60" height="60" style="object-fit: cover;">
+                        </div>
+                        <div>
+                            <h5 class="mb-0">Sarah Johnson</h5>
+                            <small>Digital Marketing Lead</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial p-4 bg-dark rounded shadow">
+                    <p class="fst-italic">"The team at AOQ doesn't just represent athletes, they build careers. Their guidance has been invaluable in navigating both my fighting career and business ventures."</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <div class="testimonial-img me-3">
+                            <img src="assets/image.png" alt="Client" class="rounded-circle" width="60" height="60" style="object-fit: cover;">
+                        </div>
+                        <div>
+                            <h5 class="mb-0">Mike Williams</h5>
+                            <small>Former Champion & Entrepreneur</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Career Cards Styling */
+    .career-card {
+        border: 1px solid var(--color-accent);
+        transition: all 0.3s ease;
+        background-color: var(--color-dark) !important;
+    }
+    
+    .career-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5) !important;
+        border-color: var(--color-gray);
+    }
+    
+    .card-header-custom {
+        border-bottom: 1px solid var(--color-gray);
+        padding-bottom: 10px;
+    }
+    
+    /* Toggle Switch Styling */
+    .label {
+        height: 60px;
+        width: 120px;
+        background-color: #ffffff;
+        border-radius: 30px;
+        box-shadow: inset 0 0 5px 4px rgba(255, 255, 255, 1),
+                    inset 0 0 20px 1px rgba(0, 0, 0, 0.488), 
+                    10px 20px 30px rgba(0, 0, 0, 0.096),
+                    inset 0 0 0 3px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.4s;
+    }
+
+    .label:hover {
+        transform: perspective(100px) rotateX(5deg) rotateY(-5deg);
+    }
+
+    #careerToggle {
+        display: none;
+    }
+
+    #careerToggle:checked ~ .label::before {
+        left: 70px;
+        background-color: #000000;
+        background-image: linear-gradient(315deg, #000000 0%, #414141 70%);
+        transition: 0.4s;
+    }
+
+    .label::before {
+        position: absolute;
+        content: "";
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: #000000;
+        background-image: linear-gradient(130deg, #757272 10%, #ffffff 11%, #726f6f 62%);
+        left: 10px;
+        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3), 
+                    10px 10px 10px rgba(0, 0, 0, 0.3);
+        transition: 0.4s;
+    }
+    
+    /* Animation */
+    @keyframes fadeInUp {
+        0% {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .fade-in {
+        animation: fadeInUp 0.6s ease-in-out;
+    }
+    
+    /* Testimonial styling */
+    .testimonial {
+        transition: all 0.3s ease;
+        background-color: var(--color-dark) !important;
+    }
+    
+    .testimonial:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+    }
+    
+    /* Toggle label enhancements */
+    .toggle-labels {
+        font-size: var(--font-size-medium);
+        font-weight: 500;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .career-card {
+            margin-bottom: 20px;
+        }
+        
+        .label {
+            height: 50px;
+            width: 100px;
+        }
+        
+        .label::before {
+            height: 34px;
+            width: 34px;
+            left: 8px;
+        }
+        
+        #careerToggle:checked ~ .label::before {
+            left: 58px;
+        }
+        
+        .toggle-labels {
+            font-size: var(--font-size-small);
+            width: 100px !important;
+        }
+    }
+</style>
