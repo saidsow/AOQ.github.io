@@ -294,4 +294,143 @@ body {
     transform: scale(1.1);
 }
 
+/* Toggle Switch Styles */
+.toggle-switch-container {
+    display: flex;
+    background-color: #222;
+    border-radius: 30px;
+    padding: 5px;
+    width: fit-content;
+    margin: 0 auto 40px;
+}
+
+.toggle-btn {
+    background: transparent;
+    color: #999;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.toggle-btn.active {
+    background-color: #D4AF37;
+    color: #000;
+}
+
+/* Toggle Content Sections */
+.toggle-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.toggle-content.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Athlete Card Styles */
+.athlete-card {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.athlete-card:hover {
+    transform: translateY(-5px);
+}
+
+.athlete-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.athlete-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.5) 60%, rgba(0,0,0,0));
+    transition: all 0.3s ease;
+}
+
+.athlete-name {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.athlete-division {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #D4AF37;
+}
+
+.athlete-bio {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    transition: max-height 0.3s ease, margin-top 0.3s ease;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+}
+
+.athlete-card:hover .athlete-bio {
+    max-height: 100px;
+    margin-top: 10px;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+    margin-top: 30px;
+}
+
+.pagination-btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+/* Partner Logo Styles */
+.partner-logo {
+    transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: scale(1.1);
+}
+
+.partner-logo-img {
+    transition: opacity 0.3s ease;
+}
+
+.partner-logo:hover .partner-logo-img {
+    opacity: 1 !important;
+}
+
 
