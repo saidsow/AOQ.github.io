@@ -26,8 +26,8 @@
 </section>
 
 <!-- Scrolling Text Banner -->
-<section class="bg-black py-0 overflow-hidden">
-    <div class="scrolling-text-container py-4">
+<section class="bg-black overflow-hidden">
+    <div class="scrolling-text-container">
         <div class="scrolling-text text-white">
             <span>A</span><span>T</span><span>H</span><span>L</span><span>E</span><span>T</span><span>E</span><span>S</span> • 
             <span>O</span><span>P</span><span>P</span><span>O</span><span>R</span><span>T</span><span>U</span><span>N</span><span>I</span><span>T</span><span>I</span><span>E</span><span>S</span> • 
@@ -40,7 +40,7 @@
 </section>
 
 <!-- Services Section with Animated Cards -->
-<section id="services" class="bg-black text-white py-5 py-lg-6 vh-100">
+<section id="services" class="bg-black text-white py-5 py-lg-6 d-lg-flex align-items-lg-center vh-100-lg">
     <div class="container-fluid px-4 px-lg-5">
         <h2 class="text-center display-3 mb-5 line-font hidden text-white">WHAT WE DO</h2>
         
@@ -99,52 +99,82 @@
     </div>
 </section>
 
-<!-- Featured Athletes Section with Dynamic Hover Effects -->
+<!-- Featured Athletes Section with Dynamic Hover Effects and Selection -->
 <section class="bg-black text-white py-6" style="min-height: 800px;">
     <div class="container-fluid px-4 px-lg-5 py-5">
         <h2 class="text-center display-3 mb-5 line-font hidden">OUR FIGHTERS</h2>
         
-        <div class="row g-4 justify-content-center">
-            <!-- Featured Athlete 1 -->
-            <div class="col-md-4 col-lg-3 hidden">
-                <div class="athlete-card position-relative rounded overflow-hidden" style="height: 500px;">
+        <!-- 7 Fighter thumbnails in a row -->
+        <div class="row g-3 justify-content-center mb-5">
+            <!-- Fighter 1 -->
+            <div class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail" style="transition-delay: 0s;" data-fighter="Julius">
+                <div class="fighter-thumbnail-card position-relative rounded overflow-hidden cursor-pointer" style="height: 150px;">
                     <img src="assets/Fighters/Julius.jpg" alt="Julius" class="w-100 h-100 object-position-top object-fit-cover">
-                    <div class="athlete-overlay position-absolute w-100 h-100 top-0 start-0 d-flex flex-column justify-content-end p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);">
-                        <h4 class="mb-1">JULIUS ANGLICKAS</h4>
-                        <p class="opacity-75 mb-0">Light Heavyweight</p>
+                    <div class="fighter-thumbnail-overlay position-absolute w-100 h-100 top-0 start-0 d-flex flex-column justify-content-end p-2" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);">
+                        <h6 class="mb-0 text-center fw-bold fs-6">JULIUS</h6>
                     </div>
                 </div>
             </div>
             
-            <!-- Featured Athlete 2 -->
-            <div class="col-md-4 col-lg-3 hidden" style="transition-delay: 0.1s;">
-                <div class="athlete-card position-relative rounded overflow-hidden" style="height: 500px;">
+            <!-- Fighter 2 -->
+            <div class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail" style="transition-delay: 0.1s;" data-fighter="Said">
+                <div class="fighter-thumbnail-card position-relative rounded overflow-hidden cursor-pointer" style="height: 150px;">
                     <img src="assets/Fighters/Said.jpg" alt="Said" class="w-100 h-100 object-position-top object-fit-cover">
-                    <div class="athlete-overlay position-absolute w-100 h-100 top-0 start-0 d-flex flex-column justify-content-end p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);">
-                        <h4 class="mb-1">SAID SOWMA</h4>
-                        <p class="opacity-75 mb-0">Heavyweight</p>
+                    <div class="fighter-thumbnail-overlay position-absolute w-100 h-100 top-0 start-0 d-flex flex-column justify-content-end p-2" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);">
+                        <h6 class="mb-0 text-center fw-bold fs-6">SAID</h6>
                     </div>
                 </div>
             </div>
             
-            <!-- Featured Athlete 3 -->
-            <div class="col-md-4 col-lg-3 hidden" style="transition-delay: 0.2s;">
-                <div class="athlete-card position-relative rounded overflow-hidden" style="height: 500px;">
-                    <img src="assets/Fighters/Ilima.png" alt="Ilima-Lei" class="w-100 h-100 object-position-top object-fit-cover">
-                    <div class="athlete-overlay position-absolute w-100 h-100 top-0 start-0 d-flex flex-column justify-content-end p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);">
-                        <h4 class="mb-1">ILIMA-LEI MACFARLANE</h4>
-                        <p class="opacity-75 mb-0">Flyweight</p>
+            <!-- Fighter 3 -->
+            <div class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail" style="transition-delay: 0.2s;" data-fighter="Ilima">
+                <div class="fighter-thumbnail-card position-relative rounded overflow-hidden cursor-pointer" style="height: 150px;">
+                    <img src="assets/Fighters/Ilima.png" alt="Ilima" class="w-100 h-100 object-position-top object-fit-cover">
+                    <div class="fighter-thumbnail-overlay position-absolute w-100 h-100 top-0 start-0 d-flex flex-column justify-content-end p-2" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);">
+                        <h6 class="mb-0 text-center fw-bold fs-6">ILIMA</h6>
                     </div>
                 </div>
             </div>
             
-            <!-- Featured Athlete 4 -->
-            <div class="col-md-4 col-lg-3 hidden" style="transition-delay: 0.3s;">
-                <div class="athlete-card position-relative rounded overflow-hidden" style="height: 500px;">
+            <!-- Fighter 4 -->
+            <div class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail" style="transition-delay: 0.3s;" data-fighter="Tyrell">
+                <div class="fighter-thumbnail-card position-relative rounded overflow-hidden cursor-pointer" style="height: 150px;">
                     <img src="assets/Fighters/Tyrell.png" alt="Tyrell" class="w-100 h-100 object-position-top object-fit-cover">
-                    <div class="athlete-overlay position-absolute w-100 h-100 top-0 start-0 d-flex flex-column justify-content-end p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);">
-                        <h4 class="mb-1">TYRELL FORTUNE</h4>
-                        <p class="opacity-75 mb-0">Heavyweight</p>
+                    <div class="fighter-thumbnail-overlay position-absolute w-100 h-100 top-0 start-0 d-flex flex-column justify-content-end p-2" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);">
+                        <h6 class="mb-0 text-center fw-bold fs-6">TYRELL</h6>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fighter 5 -->
+            <div class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail" style="transition-delay: 0.4s;" data-fighter="Kevin">
+                <div class="fighter-thumbnail-card position-relative rounded overflow-hidden cursor-pointer" style="height: 150px;">
+                    <img src="assets/Fighters/Kevin.png" alt="Kevin" class="w-100 h-100 object-position-top object-fit-cover">
+                    <div class="fighter-thumbnail-overlay position-absolute w-100 h-100 top-0 start-0 d-flex flex-column justify-content-end p-2" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);">
+                        <h6 class="mb-0 text-center fw-bold fs-6">KEVIN</h6>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fighter 6 -->
+            <div class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail" style="transition-delay: 0.6s;" data-fighter="Grant">
+                <div class="fighter-thumbnail-card position-relative rounded overflow-hidden cursor-pointer" style="height: 150px;">
+                    <img src="assets/Fighters/Grant.png" alt="Grant" class="w-100 h-100 object-position-top object-fit-cover">
+                    <div class="fighter-thumbnail-overlay position-absolute w-100 h-100 top-0 start-0 d-flex flex-column justify-content-end p-2" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);">
+                        <h6 class="mb-0 text-center fw-bold fs-6">GRANT</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Featured Fighter Display Area -->
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 hidden">
+                <div id="featured-fighter-display" class="position-relative rounded overflow-hidden" style="height: 500px; display: none;">
+                    <img id="featured-fighter-image" src="" alt="Featured Fighter" class="w-100 h-100 object-position-top object-fit-cover">
+                    <div class="position-absolute w-100 h-100 top-0 start-0 d-flex flex-column justify-content-end p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);">
+                        <h3 id="featured-fighter-name" class="mb-1">SELECT A FIGHTER ABOVE</h3>
+                        <p id="featured-fighter-division" class="opacity-75 mb-0">Click any fighter image to see details</p>
                     </div>
                 </div>
             </div>
@@ -223,6 +253,156 @@
                 <div class="d-flex justify-content-center gap-3 flex-wrap">
                     <a href="#" onclick="loadComponent('contact')" class="btn btn-outline-light btn-lg">CONTACT US</a>
                     <a href="#" onclick="loadComponent('career')" class="btn btn-outline-light btn-lg">JOIN OUR TEAM</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest News Section -->
+<section class="bg-dark text-white py-5">
+    <div class="container-fluid px-4 px-lg-5">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <h2 class="display-4 line-font hidden">LATEST NEWS</h2>
+            <a href="#" class="btn btn-outline-light hidden">VIEW ALL</a>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 hidden">
+                <div class="news-card bg-black rounded overflow-hidden">
+                    <div class="news-img position-relative">
+                        <img src="assets/Jay_LeoRever.jpg" alt="News Image" class="w-100" style="height: 220px; object-fit: cover;">
+                        <div class="news-date position-absolute bottom-0 start-0 bg-dark px-3 py-2">
+                            <span>APR 15, 2025</span>
+                        </div>
+                    </div>
+                    <div class="news-content p-4">
+                        <h4 class="mb-3">AOQ Sports Signs New Partnership with LeoRever</h4>
+                        <p class="opacity-75 mb-4">AOQ Sports is proud to announce a new partnership with LeoRever, expanding opportunities for our athletes in digital marketing.</p>
+                        <a href="#" class="text-decoration-none d-inline-flex align-items-center text-white">
+                            READ MORE <img src="assets/ArrowRight.png" alt="Arrow" width="20" class="ms-2">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 hidden" style="transition-delay: 0.2s;">
+                <div class="news-card bg-black rounded overflow-hidden">
+                    <div class="news-img position-relative">
+                        <img src="assets/Fighters/Julius.jpg" alt="News Image" class="w-100" style="height: 220px; object-fit: cover;">
+                        <div class="news-date position-absolute bottom-0 start-0 bg-dark px-3 py-2">
+                            <span>APR 10, 2025</span>
+                        </div>
+                    </div>
+                    <div class="news-content p-4">
+                        <h4 class="mb-3">Julius Anglickas Signs Multi-Fight Deal</h4>
+                        <p class="opacity-75 mb-4">Light Heavyweight contender Julius Anglickas has signed a new multi-fight deal, with his next bout scheduled for summer 2025.</p>
+                        <a href="#" class="text-decoration-none d-inline-flex align-items-center text-white">
+                            READ MORE <img src="assets/ArrowRight.png" alt="Arrow" width="20" class="ms-2">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 hidden" style="transition-delay: 0.4s;">
+                <div class="news-card bg-black rounded overflow-hidden">
+                    <div class="news-img position-relative">
+                        <img src="assets/betting.jpg" alt="News Image" class="w-100" style="height: 220px; object-fit: cover;">
+                        <div class="news-date position-absolute bottom-0 start-0 bg-dark px-3 py-2">
+                            <span>APR 5, 2025</span>
+                        </div>
+                    </div>
+                    <div class="news-content p-4">
+                        <h4 class="mb-3">AOQ Expands Sports Betting Partnerships</h4>
+                        <p class="opacity-75 mb-4">AOQ Sports continues to expand its portfolio in the sports betting industry with new strategic partnerships for 2025.</p>
+                        <a href="#" class="text-decoration-none d-inline-flex align-items-center text-white">
+                            READ MORE <img src="assets/ArrowRight.png" alt="Arrow" width="20" class="ms-2">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section class="py-5" id="testimonials">
+    <div class="container px-4 px-lg-5">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center hidden">
+                <h2 class="display-4 line-font">WHAT OUR CLIENTS SAY</h2>
+                <p class="lead opacity-75">Read testimonials from athletes who trust AOQ Sports</p>
+            </div>
+        </div>
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-4 hidden">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-warning me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                        <p class="card-text mb-4">"AOQ Sports transformed my career. Their expertise in negotiating contracts and finding sponsorships has been invaluable. They truly care about their athletes and go above and beyond."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/Fighters/Kevin.png" alt="Athlete" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Kevin Holland</h6>
+                                <small class="text-muted">MMA Fighter</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 hidden" style="transition-delay: 0.1s;">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-warning me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                        <p class="card-text mb-4">"Working with AOQ Sports has been a game-changer. Their personalized approach to athlete management and deep understanding of the sports business landscape has opened doors I never thought possible."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/Fighters/Tyrell.png" alt="Athlete" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Tyrell Fortune</h6>
+                                <small class="text-muted">MMA Fighter</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 hidden" style="transition-delay: 0.2s;">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-warning me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                        <p class="card-text mb-4">"The team at AOQ Sports provides expert guidance and genuine care for their athletes. They've helped me navigate complex contracts and build valuable brand partnerships that align with my values."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/Fighters/Maurice.png" alt="Athlete" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Maurice Greene</h6>
+                                <small class="text-muted">MMA Fighter</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

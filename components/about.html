@@ -7,30 +7,37 @@
             </div>
         </div>
         
-        <!-- Pyramid Layout with Hover Animation -->
-        <div class="pyramid-container my-5">
-            <div class="pyramid">
-                <div class="pyramid-top">
-                    <div class="pyramid-image">
-                        <img src="assets/image (1).png" class="img-fluid rounded-3" alt="Service 1">
-                        <div class="image-overlay">
-                            <h3>Athlete Representation</h3>
-                        </div>
-                    </div>
+        <!-- 4 Floating Images Layout -->
+        <div class="floating-images-container my-5">
+            <div class="floating-image image-1">
+                <img src="assets/image (1).png" class="img-fluid rounded-3" alt="Service 1">
+                <div class="image-overlay">
+                    <h3>Athlete Representation</h3>
+                    <p class="service-description">Expert management for athletes to maximize their career potential and opportunities.</p>
                 </div>
-                <div class="pyramid-bottom">
-                    <div class="pyramid-image pyramid-left">
-                        <img src="assets/image (2).png" class="img-fluid rounded-3" alt="Service 2">
-                        <div class="image-overlay">
-                            <h3>Brand Management</h3>
-                        </div>
-                    </div>
-                    <div class="pyramid-image pyramid-right">
-                        <img src="assets/image.png" class="img-fluid rounded-3" alt="Service 3">
-                        <div class="image-overlay">
-                            <h3>Media Production</h3>
-                        </div>
-                    </div>
+            </div>
+            
+            <div class="floating-image image-2">
+                <img src="assets/image (2).png" class="img-fluid rounded-3" alt="Service 2">
+                <div class="image-overlay">
+                    <h3>Brand Management</h3>
+                    <p class="service-description">Strategic brand development to enhance athlete visibility and marketability.</p>
+                </div>
+            </div>
+            
+            <div class="floating-image image-3">
+                <img src="assets/image.png" class="img-fluid rounded-3" alt="Service 3">
+                <div class="image-overlay">
+                    <h3>Media Production</h3>
+                    <p class="service-description">Professional content creation to showcase athletes across various platforms.</p>
+                </div>
+            </div>
+            
+            <div class="floating-image image-4">
+                <img src="assets/Fighters/Julius.jpg" class="img-fluid rounded-3" alt="Service 4">
+                <div class="image-overlay">
+                    <h3>Marketing & Promotion</h3>
+                    <p class="service-description">Comprehensive marketing strategies to build athlete careers and secure endorsements.</p>
                 </div>
             </div>
         </div>
@@ -73,31 +80,33 @@
 
 <!-- Images section of lifestyle -->
 <section class="bg-dark text-white position-relative">
-    <div class="container position-relative">
+    <div class="container position-relative overflow-hidden">
         <div class="row justify-content-center vh-400">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <p class="text-uppercase fw-bold text-center sticky-top pt-5 quan-definition" style="top: 50vh;">
                     quan
                     /kwän/
                     noun The total package of success, encompassing not just wealth but also respect, love, and personal fulfillment.
                 </p>
-                <div class="parallax-image parallax-image-1">
-                    <img src="assets/Jay_LeoRever.jpg" alt="" height="420px">
-                </div>
-                <div class="parallax-image parallax-image-2">
-                    <img src="assets/Fighters/Ilima.png" alt="" height="350px">
-                </div>
-                <div class="parallax-image parallax-image-3">
-                    <img src="assets/race.jpg" alt="" height="220px">
-                </div>
-                <div class="parallax-image parallax-image-4">
-                    <img src="assets/tennis-5018589_1280.jpg" alt="" height="320px">
-                </div>
-                <div class="parallax-image parallax-image-5">
-                    <img src="assets/Screenshot 2024-01-01 190744.png" alt="" height="300px">
-                </div>
-                <div class="parallax-image parallax-image-6">
-                    <img src="assets/Screenshot 2024-01-01 183537.png" alt="" height="420px">
+                <div class="parallax-image-container">
+                    <div class="parallax-image parallax-image-1">
+                        <img src="assets/Jay_LeoRever.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="parallax-image parallax-image-2">
+                        <img src="assets/Fighters/Ilima.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="parallax-image parallax-image-3">
+                        <img src="assets/race.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="parallax-image parallax-image-4">
+                        <img src="assets/tennis-5018589_1280.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="parallax-image parallax-image-5">
+                        <img src="assets/Screenshot 2024-01-01 190744.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="parallax-image parallax-image-6">
+                        <img src="assets/Screenshot 2024-01-01 183537.png" alt="" class="img-fluid">
+                    </div>
                 </div>
             </div>
         </div>
@@ -440,10 +449,25 @@
     }
     
     /* Parallax effect for images */
+    .parallax-image-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
     .parallax-image {
         position: absolute;
         will-change: transform;
-        max-height: 100%;
+        width: 90%;
+        max-width: 100%;
+    }
+    
+    .parallax-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     }
     
     .parallax-image-1 {
@@ -454,7 +478,8 @@
     
     .parallax-image-2 {
         top: 8%;
-        left: 70%;
+        right: 5%;
+        left: auto;
         transform: translateY(0);
     }
     
@@ -466,7 +491,8 @@
     
     .parallax-image-4 {
         top: 30%;
-        left: 60%;
+        right: 5%;
+        left: auto;
         transform: translateY(0);
     }
     
@@ -478,7 +504,8 @@
     
     .parallax-image-6 {
         top: 60%;
-        left: 65%;
+        right: 5%;
+        left: auto;
         transform: translateY(0);
     }
     
@@ -586,26 +613,32 @@
             font-size: 1.1rem;
         }
         
-        .parallax-image-1 img,
-        .parallax-image-2 img {
-            height: 200px;
-            width: 100%;
+        .parallax-image {
+            width: 80%; /* Reduce width on mobile */
         }
         
-        .parallax-image-3 img,
-        .parallax-image-5 img {
-            height: 120px;
-            width: 100%;
+        .parallax-image-1 {
+            left: 10%;
         }
         
-        .parallax-image-4 img {
-            height: 100px;
-            width: 100%;
+        .parallax-image-2 {
+            right: 10%;
         }
         
-        .parallax-image-6 img {
-            height: 180px;
-            width: 100%;
+        .parallax-image-3 {
+            left: 10%;
+        }
+        
+        .parallax-image-4 {
+            right: 10%;
+        }
+        
+        .parallax-image-5 {
+            left: 10%;
+        }
+        
+        .parallax-image-6 {
+            right: 10%;
         }
         
         .quan-definition {

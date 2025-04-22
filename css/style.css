@@ -11,23 +11,57 @@
   --transition-speed: 0.3s;
 }
 
+/* Global styles that override Bootstrap defaults */
 body {
-  margin: 0;
-  background-color: #ffffff;
-  color: #fff;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
-  position: relative; /* Added for better positioning context */
+  position: relative;
+  /* Removed redundant background-color and color that duplicates bg-black and text-white */
 }
 
-/* Image positioning */
-.object-fit-cover {
-  object-fit: cover;
+/* Custom utility classes - Only keep what Bootstrap doesn't provide */
+.z-index-nav {
+  z-index: 1030; /* Higher than default Bootstrap z-index values */
 }
 
-.object-position-top {
-  object-position: top;
+/* Navbar styles */
+.navbar {
+  transition: background-color 0.3s ease, padding 0.3s ease;
 }
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hide contact button on mobile screens */
+@media (max-width: 991px) {
+  .navbar .d-flex.align-items-center button.btn-outline-light {
+    display: none !important;
+  }
+}
+
+/* Removed vh-75 class as Bootstrap has vh-75 utility */
+
+.letter-spacing {
+  letter-spacing: -1px;
+}
+
+/* Custom form elements */
+.input-field {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.input-field:focus {
+  background-color: #e0e0e0;
+  border-color: #999;
+}
+
+/* Removed hover-effect class as it can be built with Bootstrap utilities */
 
 /* Animation Classes */
 .hidden {
@@ -51,7 +85,7 @@ body {
 .parallax-section {
   position: relative;
   z-index: 10;
-  margin-top: -100px; /* This will make the section overlap with the previous section */
+  margin-top: -100px;
 }
 
 /* Scrolling text banner */
@@ -61,29 +95,23 @@ body {
   position: relative;
   padding: 1rem 0;
   background-color: transparent;
-  z-index: 20; /* Higher z-index to appear above the hero section */
+  z-index: 20;
 }
 
 .scrolling-text {
   display: inline-block;
   white-space: nowrap;
-  animation: scrollText 100s linear infinite; /* Slowed down animation from 80s to 100s */
+  animation: scrollText 100s linear infinite;
   font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: 3px;
   -webkit-text-stroke: 1px rgba(255,255,255,0.2);
-  padding-right: 100px; /* Add padding to ensure gap between repeated content */
-}
-
-/* Remove the pseudo-elements approach and fix the content repetition in HTML instead */
-.scrolling-text-container::before,
-.scrolling-text-container::after {
-  content: none;
+  padding-right: 100px;
 }
 
 .scrolling-text span {
   display: inline-block;
-  animation: waveText 5s ease-in-out infinite; /* Slowed down wave animation from 4s to 5s */
+  animation: waveText 5s ease-in-out infinite;
 }
 
 /* Generate animation delays for each letter (up to 50 letters) */
@@ -143,7 +171,7 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%); /* Move left by entire width for seamless looping */
+    transform: translateX(-100%);
   }
 }
 
@@ -152,10 +180,10 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-15px); /* Reduced wave height from -20px to -15px */
+    transform: translateY(-15px);
   }
   25%, 75% {
-    transform: translateY(8px); /* Reduced downward movement from 10px to 8px */
+    transform: translateY(8px);
   }
 }
 
@@ -197,14 +225,22 @@ body {
   }
 }
 
-/* Navbar styling */
+/* Navbar styling - simplify by using Bootstrap classes where possible */
 .navbar.bg-transparent {
     transition: background-color 0.3s ease;
 }
 
-/* Make navbar background transparent even when scrolling */
 .navbar.bg-transparent.scrolled {
     background-color: transparent !important;
+}
+
+/* Custom background gradient utility classes */
+.bg-gradient-dark {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+}
+
+.bg-gradient-darker {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
 }
 
 /* Responsive adjustments */
@@ -213,13 +249,38 @@ body {
     font-size: 1rem;
   }
   
-  .container-fluid {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+  /* Remove custom container padding as Bootstrap has px-* utilities */
   
   .hidden {
     transition: all 0.5s;
+  }
+  
+  /* Make navbar text bigger in mobile view */
+  .navbar .nav-link {
+    font-size: 1.25rem !important;
+  }
+  
+  /* Make footer text bigger in mobile view */
+  footer p {
+    font-size: 1.1rem;
+  }
+  
+  footer .btn-link {
+    font-size: 1.1rem;
+  }
+  
+  /* Reduce space between scrolling text and What We Do section */
+  .scrolling-text-container {
+    padding: 0.5rem 0;
+    margin-bottom: -20px;
+  }
+  
+  #services {
+    padding-top: 20px;
+  }
+  
+  #services.py-5 {
+    padding-top: 0.5rem !important;
   }
 }
 
@@ -254,11 +315,12 @@ body {
     z-index: 10;
 }
 
-.row.g-5 {
+/* Use Bootstrap's gutter utilities */
+.g-custom {
     margin: 0 -30px;
 }
 
-.row.g-5 > .col-md-4 {
+.g-custom > [class*="col-"] {
     padding: 0 30px;
 }
 
@@ -275,11 +337,11 @@ body {
         min-height: 350px;
     }
     
-    .row.g-5 {
+    .g-custom {
         margin: 0 -15px;
     }
     
-    .row.g-5 > .col-md-4 {
+    .g-custom > [class*="col-"] {
         padding: 0 15px;
         margin-bottom: 30px;
     }
@@ -431,6 +493,342 @@ body {
 
 .partner-logo:hover .partner-logo-img {
     opacity: 1 !important;
+}
+
+/* Floating Images Layout for About Page */
+.floating-images-container {
+    position: relative;
+    min-height: 550px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.floating-image {
+    position: absolute;
+    width: 340px;
+    height: 240px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.floating-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.floating-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+/* Repositioned images */
+.image-1 {
+    top: 50px;
+    left: calc(25% - 170px);
+}
+
+.image-2 {
+    top: 50px;
+    left: calc(75% - 170px);
+}
+
+.image-3 {
+    top: 310px;
+    left: calc(25% - 170px);
+}
+
+.image-4 {
+    top: 310px;
+    left: calc(75% - 170px);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.floating-image:hover .image-overlay {
+    transform: translateY(0);
+}
+
+.image-overlay h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.service-description {
+    color: #ddd;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 992px) {
+    .floating-images-container {
+        min-height: 650px;
+    }
+    
+    .floating-image {
+        width: 300px;
+        height: 220px;
+    }
+    
+    .image-1 {
+        top: 50px;
+        left: calc(25% - 150px);
+    }
+    
+    .image-2 {
+        top: 50px;
+        left: calc(75% - 150px);
+    }
+    
+    .image-3 {
+        top: 290px;
+        left: calc(25% - 150px);
+    }
+    
+    .image-4 {
+        top: 290px;
+        left: calc(75% - 150px);
+    }
+}
+
+@media (max-width: 768px) {
+    .scrolling-text {
+        font-size: 1rem;
+    }
+
+    .floating-images-container {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .floating-image {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        margin-bottom: 30px;
+        top: auto;
+        left: auto;
+    }
+    
+    .image-overlay {
+        transform: translateY(0);
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    /* Make navbar text bigger in mobile view */
+    .navbar .nav-link {
+        font-size: 1.25rem !important;
+    }
+    
+    /* Make footer text bigger in mobile view */
+    footer p {
+        font-size: 1.1rem;
+    }
+    
+    footer .btn-link {
+        font-size: 1.1rem;
+    }
+    
+    /* Services section spacing adjustment for mobile */
+    #services {
+        padding-top: 40px;
+    }
+    
+    #services.py-5 {
+        padding-top: 1rem !important;
+    }
+}
+
+/* Slide-in Navigation Modal */
+.nav-modal {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 100%;
+  max-width: 350px;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 1031;
+  transition: right 0.5s ease-in-out;
+  overflow-y: auto;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  transform: translateX(0); /* Ensure no transform is applied initially */
+}
+
+/* Show navigation modal only on screens smaller than 992px */
+@media (min-width: 992px) {
+  .nav-modal {
+    display: none;
+  }
+  
+  .hamburger-btn {
+    display: none;
+  }
+  
+  .modal-backdrop {
+    display: none !important;
+  }
+}
+
+.nav-modal.show {
+  right: 0;
+}
+
+.nav-modal-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 0 0;
+}
+
+.nav-modal-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-modal-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-modal-item {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.nav-modal-link {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-decoration: none;
+  padding: 10px 15px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.nav-modal-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s;
+  transform: translateX(-50%);
+}
+
+.nav-modal-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-modal-link:hover::after {
+  width: 80%;
+}
+
+/* Hamburger Button Animation */
+.hamburger-btn {
+  position: relative;
+  z-index: 1040;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 15px;
+}
+
+.hamburger-icon {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* X animation when active */
+.hamburger-btn.active .hamburger-icon span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-btn.active .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active .hamburger-icon span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Add overlay when modal is open */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1030;
+  display: none;
+}
+
+.modal-backdrop.show {
+  display: block;
+}
+
+/* Show standard navbar links only on desktop */
+@media (max-width: 991.98px) {
+  .navbar .navbar-nav:not(.mobile-nav) {
+    display: none !important;
+  }
+}
+
+/* Full width on mobile */
+@media (max-width: 576px) {
+  .nav-modal {
+    max-width: 100%;
+  }
+}
+
+/* Responsive utilities */
+.vh-100-lg {
+  min-height: auto; /* Default height for smaller screens */
+}
+
+@media (min-width: 992px) {
+  .vh-100-lg {
+    min-height: 100vh !important; /* Full viewport height on large screens only */
+  }
 }
 
 

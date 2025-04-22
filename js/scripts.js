@@ -179,4 +179,197 @@ document.addEventListener('DOMContentLoaded', function() {
       
       return false;
   });
+  
+  // Fighter selection feature
+  const fighterThumbnails = document.querySelectorAll('.fighter-thumbnail');
+  const featuredFighterDisplay = document.getElementById('featured-fighter-display');
+  const featuredFighterImage = document.getElementById('featured-fighter-image');
+  const featuredFighterName = document.getElementById('featured-fighter-name');
+  const featuredFighterDivision = document.getElementById('featured-fighter-division');
+  
+  // Fighter data (you can expand this with more details)
+  const fighterData = {
+      'Julius': {
+          name: 'JULIUS',
+          division: 'Heavyweight',
+          image: 'assets/Fighters/Julius.jpg'
+      },
+      'Said': {
+          name: 'SAID',
+          division: 'Bantamweight',
+          image: 'assets/Fighters/Said.jpg'
+      },
+      'Ilima': {
+          name: 'ILIMA',
+          division: 'Welterweight',
+          image: 'assets/Fighters/Ilima.png'
+      },
+      'Tyrell': {
+          name: 'TYRELL',
+          division: 'Middleweight',
+          image: 'assets/Fighters/Tyrell.png'
+      },
+      'Kevin': {
+          name: 'KEVIN',
+          division: 'Lightweight',
+          image: 'assets/Fighters/Kevin.png'
+      },
+      'Maurice': {
+          name: 'MAURICE',
+          division: 'Light Heavyweight',
+          image: 'assets/Fighters/Maurice.png'
+      },
+      'Grant': {
+          name: 'GRANT',
+          division: 'Featherweight',
+          image: 'assets/Fighters/Grant.png'
+      }
+  };
+  
+  // Add click event to each fighter thumbnail
+  fighterThumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', function() {
+          const fighterId = this.getAttribute('data-fighter');
+          const fighter = fighterData[fighterId];
+          
+          if (fighter) {
+              // Update featured fighter display
+              featuredFighterImage.src = fighter.image;
+              featuredFighterName.textContent = fighter.name;
+              featuredFighterDivision.textContent = fighter.division;
+              
+              // Show the featured fighter display
+              featuredFighterDisplay.style.display = 'block';
+              
+              // Smooth scroll to the featured fighter display
+              featuredFighterDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+      });
+  });
+  
+  // Hamburger menu toggle
+  const hamburgerBtn = document.querySelector('.hamburger-btn');
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', function() {
+      if (this.classList.contains('active')) {
+        closeNavModal();
+      } else {
+        openNavModal();
+      }
+    });
+  }
+  
+  // Close modal when clicking outside or pressing escape
+  document.addEventListener('click', function(event) {
+    const navModal = document.getElementById('navModal');
+    if (navModal && navModal.classList.contains('show')) {
+      // Check if click is outside the modal content
+      if (event.target.classList.contains('modal-backdrop')) {
+        closeNavModal();
+      }
+    }
+  });
+  
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeNavModal();
+    }
+  });
 });
+
+// Parallax Effect for About Page
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if we're on the about page by looking for parallax elements
+    const parallaxImages = document.querySelectorAll('.parallax-image');
+    
+    if (parallaxImages.length > 0) {
+        const container = document.querySelector('.parallax-image-container');
+        let containerHeight, containerWidth, containerTop;
+        
+        // Function to update container dimensions
+        function updateContainerDimensions() {
+            if (container) {
+                const rect = container.getBoundingClientRect();
+                containerTop = rect.top + window.scrollY;
+                containerHeight = rect.height;
+                containerWidth = rect.width;
+            }
+        }
+        
+        // Initial dimensions
+        updateContainerDimensions();
+        
+        // Update dimensions on resize
+        window.addEventListener('resize', updateContainerDimensions);
+        
+        // Parallax scroll effect
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            
+            // Only apply parallax if container is in view
+            if (scrollTop + window.innerHeight > containerTop && scrollTop < containerTop + containerHeight) {
+                // Calculate how far into the section we've scrolled (0 to 1)
+                const scrollProgress = (scrollTop - containerTop) / containerHeight;
+                
+                // Apply different scroll speeds to each image
+                parallaxImages.forEach((image, index) => {
+                    const speed = 0.1 + (index * 0.05); // Different speeds for different images
+                    const translateY = Math.min(containerHeight * 0.5, scrollProgress * containerHeight * speed);
+                    
+                    // Apply transform with containment to avoid overflowing
+                    image.style.transform = `translateY(${translateY}px)`;
+                    
+                    // Make sure images don't exceed container boundaries
+                    image.style.maxWidth = '100%';
+                    
+                    // Adjust opacity based on scroll position for a fade effect
+                    const opacity = Math.min(1, 1 - Math.abs((scrollProgress - 0.5) * 1.5));
+                    image.style.opacity = opacity > 0.2 ? opacity : 0.2; // Never go completely transparent
+                });
+            }
+        });
+    }
+});
+
+// Navigation Modal Functions
+function openNavModal() {
+  const navModal = document.getElementById('navModal');
+  const hamburgerBtn = document.querySelector('.hamburger-btn');
+  
+  navModal.classList.add('show');
+  hamburgerBtn.classList.add('active');
+  
+  // Create backdrop
+  const backdrop = document.createElement('div');
+  backdrop.classList.add('modal-backdrop');
+  document.body.appendChild(backdrop);
+  
+  // Add show class with slight delay to animate
+  setTimeout(() => {
+    backdrop.classList.add('show');
+  }, 10);
+  
+  // Prevent body scrolling
+  document.body.style.overflow = 'hidden';
+}
+
+function closeNavModal() {
+  const navModal = document.getElementById('navModal');
+  const hamburgerBtn = document.querySelector('.hamburger-btn');
+  const backdrop = document.querySelector('.modal-backdrop');
+  
+  navModal.classList.remove('show');
+  hamburgerBtn.classList.remove('active');
+  
+  if (backdrop) {
+    backdrop.classList.remove('show');
+    
+    // Remove backdrop after transition
+    setTimeout(() => {
+      backdrop.remove();
+    }, 300);
+  }
+  
+  // Re-enable body scrolling
+  document.body.style.overflow = '';
+}
