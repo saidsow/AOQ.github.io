@@ -6,41 +6,6 @@
                 <h1 class="outlined-text who text-start text-uppercase fw-bold">Who we are</h1>
             </div>
         </div>
-        
-        <!-- 4 Floating Images Layout -->
-        <div class="floating-images-container my-5">
-            <div class="floating-image image-1">
-                <img src="assets/image (1).png" class="img-fluid rounded-3" alt="Service 1">
-                <div class="image-overlay">
-                    <h3>Athlete Representation</h3>
-                    <p class="service-description">Expert management for athletes to maximize their career potential and opportunities.</p>
-                </div>
-            </div>
-            
-            <div class="floating-image image-2">
-                <img src="assets/image (2).png" class="img-fluid rounded-3" alt="Service 2">
-                <div class="image-overlay">
-                    <h3>Brand Management</h3>
-                    <p class="service-description">Strategic brand development to enhance athlete visibility and marketability.</p>
-                </div>
-            </div>
-            
-            <div class="floating-image image-3">
-                <img src="assets/image.png" class="img-fluid rounded-3" alt="Service 3">
-                <div class="image-overlay">
-                    <h3>Media Production</h3>
-                    <p class="service-description">Professional content creation to showcase athletes across various platforms.</p>
-                </div>
-            </div>
-            
-            <div class="floating-image image-4">
-                <img src="assets/Fighters/Julius.jpg" class="img-fluid rounded-3" alt="Service 4">
-                <div class="image-overlay">
-                    <h3>Marketing & Promotion</h3>
-                    <p class="service-description">Comprehensive marketing strategies to build athlete careers and secure endorsements.</p>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -79,33 +44,43 @@
 </section>
 
 <!-- Images section of lifestyle -->
-<section class="bg-dark text-white position-relative">
-    <div class="container position-relative overflow-hidden">
-        <div class="row justify-content-center vh-400">
-            <div class="col-12 col-md-6">
-                <p class="text-uppercase fw-bold text-center sticky-top pt-5 quan-definition" style="top: 50vh;">
-                    quan
-                    /kwän/
-                    noun The total package of success, encompassing not just wealth but also respect, love, and personal fulfillment.
-                </p>
-                <div class="parallax-image-container">
-                    <div class="parallax-image parallax-image-1">
-                        <img src="assets/Jay_LeoRever.jpg" alt="" class="img-fluid">
+<section class="bg-dark text-white position-relative py-5">
+    <div class="container">
+        <!-- Modern Quan Definition -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <div class="quan-card">
+                    <div class="quan-card-inner">
+                        <h2 class="quan-title">quan<span class="quan-phonetic"> /kwän/</span></h2>
+                        <div class="quan-divider"></div>
+                        <p class="quan-text">
+                            The total package of success, encompassing not just wealth but also respect, love, and personal fulfillment.
+                        </p>
                     </div>
-                    <div class="parallax-image parallax-image-2">
-                        <img src="assets/Fighters/Ilima.png" alt="" class="img-fluid">
-                    </div>
-                    <div class="parallax-image parallax-image-3">
-                        <img src="assets/race.jpg" alt="" class="img-fluid">
-                    </div>
-                    <div class="parallax-image parallax-image-4">
-                        <img src="assets/tennis-5018589_1280.jpg" alt="" class="img-fluid">
-                    </div>
-                    <div class="parallax-image parallax-image-5">
-                        <img src="assets/Screenshot 2024-01-01 190744.png" alt="" class="img-fluid">
-                    </div>
-                    <div class="parallax-image parallax-image-6">
-                        <img src="assets/Screenshot 2024-01-01 183537.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scrolling Images -->
+        <div class="row">
+            <div class="col-12">
+                <div class="scroll-gallery">
+                    <div class="scroll-image-container">
+                        <div class="scroll-image" data-speed="0.05">
+                            <img src="assets/Jay_LeoRever.jpg" alt="Athlete" class="img-fluid">
+                        </div>
+                        <div class="scroll-image" data-speed="0.08">
+                            <img src="assets/Fighters/Ilima.png" alt="Fighter" class="img-fluid">
+                        </div>
+                        <div class="scroll-image" data-speed="0.12">
+                            <img src="assets/race.jpg" alt="Racing" class="img-fluid">
+                        </div>
+                        <div class="scroll-image" data-speed="0.06">
+                            <img src="assets/tennis-5018589_1280.jpg" alt="Tennis" class="img-fluid">
+                        </div>
+                        <div class="scroll-image" data-speed="0.10">
+                            <img src="assets/Screenshot 2024-01-01 190744.png" alt="Screenshot" class="img-fluid">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -116,6 +91,193 @@
 <!-- CSS for About Page -->
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+    
+    /* New Quan Card Design */
+    .quan-card {
+        background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: all 0.4s ease;
+    }
+    
+    .quan-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
+        transform: rotate(45deg);
+        z-index: -1;
+        animation: shimmer 6s linear infinite;
+    }
+    
+    @keyframes shimmer {
+        0% { transform: translateX(-100%) rotate(45deg); }
+        100% { transform: translateX(100%) rotate(45deg); }
+    }
+    
+    .quan-card-inner {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .quan-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #ffffff, #aaaaaa);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+    
+    .quan-phonetic {
+        font-size: 1.5rem;
+        font-weight: 300;
+        opacity: 0.7;
+    }
+    
+    .quan-divider {
+        width: 100px;
+        height: 3px;
+        margin: 1.5rem auto;
+        background: linear-gradient(to right, transparent, #ffffff, transparent);
+    }
+    
+    .quan-text {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        font-weight: 300;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    /* Scrolling Image Gallery */
+    .scroll-gallery {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 2rem 0;
+        height: 600px;
+    }
+    
+    .scroll-image-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .scroll-image {
+        position: absolute;
+        width: 380px;
+        max-width: 80%;
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(100px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        will-change: transform, opacity;
+    }
+    
+    .scroll-image.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .scroll-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .scroll-image:hover img {
+        transform: scale(1.05);
+    }
+    
+    /* Position the images in a line */
+    .scroll-image:nth-child(1) {
+        left: 10%;
+        top: 5%;
+    }
+    
+    .scroll-image:nth-child(2) {
+        left: 30%;
+        top: 20%;
+    }
+    
+    .scroll-image:nth-child(3) {
+        left: 50%;
+        top: 35%;
+    }
+    
+    .scroll-image:nth-child(4) {
+        left: 70%;
+        top: 50%;
+    }
+    
+    .scroll-image:nth-child(5) {
+        left: 90%;
+        top: 65%;
+        transform: translateX(-100%);
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .quan-title {
+            font-size: 2.5rem;
+        }
+        
+        .quan-phonetic {
+            font-size: 1.2rem;
+        }
+        
+        .quan-text {
+            font-size: 1rem;
+        }
+        
+        .scroll-gallery {
+            height: 1000px;
+        }
+        
+        .scroll-image {
+            width: 300px;
+            left: 50% !important;
+            transform: translateX(-50%) translateY(100px);
+        }
+        
+        .scroll-image.visible {
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        .scroll-image:nth-child(1) {
+            top: 0%;
+        }
+        
+        .scroll-image:nth-child(2) {
+            top: 20%;
+        }
+        
+        .scroll-image:nth-child(3) {
+            top: 40%;
+        }
+        
+        .scroll-image:nth-child(4) {
+            top: 60%;
+        }
+        
+        .scroll-image:nth-child(5) {
+            top: 80%;
+        }
+    }
     
     .outlined-text {
         font-family: 'Montserrat', sans-serif;

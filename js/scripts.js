@@ -11,6 +11,8 @@ function loadComponent(name) {
         
         // Update active navigation links
         updateActiveNavLinks(name);
+        // Initialize scroll-triggered image animation
+        initScrollImages();
       });
   }
   
@@ -127,6 +129,12 @@ function initScrollAnimations() {
       if (entry.isIntersecting) {
         // Add the 'show' class
         entry.target.classList.add('show');
+        
+        // If it's a counter element, start the slot machine counter
+        if (entry.target.querySelector('.counter')) {
+          initSlotMachineCounter(entry.target.querySelector('.counter'));
+        }
+        
         // Stop observing the element (optional)
         observer.unobserve(entry.target);
       }
@@ -254,13 +262,39 @@ document.addEventListener('DOMContentLoaded', function() {
           const fighter = fighterData[fighterId];
           
           if (fighter) {
+              // Remove active class from all thumbnails
+              document.querySelectorAll('.fighter-thumbnail').forEach(item => {
+                  item.classList.remove('active');
+              });
+              
+              // Add active class to clicked thumbnail
+              this.classList.add('active');
+              
               // Update featured fighter display
               featuredFighterImage.src = fighter.image;
               featuredFighterName.textContent = fighter.name;
               featuredFighterDivision.textContent = fighter.division;
               
+              // Add fighter bio if available
+              const fighterBio = document.getElementById('featured-fighter-bio');
+              if (fighterBio) {
+                  // Set bio text based on the fighter (example content - you can customize)
+                  const bioText = getFighterBio(fighterId);
+                  fighterBio.innerHTML = bioText;
+                  
+                  // Show the bio with animation
+                  setTimeout(() => {
+                      fighterBio.classList.add('show');
+                  }, 500);
+              }
+              
               // Show the featured fighter display
               featuredFighterDisplay.style.display = 'block';
+              
+              // Add show class after a small delay to trigger animation
+              setTimeout(() => {
+                  featuredFighterDisplay.classList.add('show');
+              }, 50);
               
               // Smooth scroll to the featured fighter display
               featuredFighterDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -393,4 +427,98 @@ function closeNavModal() {
   
   // Re-enable body scrolling
   document.body.style.overflow = '';
+}
+
+// Scroll-triggered image animation for Quan section
+function initScrollImages() {
+  const scrollGallery = document.querySelector('.scroll-gallery');
+  if (!scrollGallery) return;
+  
+  const scrollImages = document.querySelectorAll('.scroll-image');
+  
+  // Create a new Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      // If gallery is in view, start showing images with staggered delay
+      if (entry.isIntersecting) {
+        scrollImages.forEach((image, index) => {
+          setTimeout(() => {
+            image.classList.add('visible');
+          }, 200 * index); // 200ms delay between each image
+        });
+      } else {
+        // Hide images when gallery is out of view
+        scrollImages.forEach(image => {
+          image.classList.remove('visible');
+        });
+      }
+    });
+  }, {
+    threshold: 0.2, // When 20% of the gallery is visible
+    rootMargin: "0px 0px -100px 0px" // Trigger slightly before fully in view
+  });
+  
+  // Observe the gallery element
+  observer.observe(scrollGallery);
+  
+  // Handle scroll effect for individual images
+  window.addEventListener('scroll', () => {
+    if (!scrollGallery.getBoundingClientRect().top < window.innerHeight && 
+        scrollGallery.getBoundingClientRect().bottom > 0) {
+      scrollImages.forEach(image => {
+        const speed = parseFloat(image.getAttribute('data-speed')) || 0.1;
+        const yPos = -(window.scrollY * speed);
+        image.style.transform = `translateY(${yPos}px)`;
+      });
+    }
+  });
+}
+
+// Slot machine counter animation function
+function initSlotMachineCounter(counterElement) {
+  if (!counterElement) return;
+  
+  // Get target number from data attribute
+  const finalNumber = parseInt(counterElement.dataset.target);
+  
+  // Set a simple increasing counter - this is more reliable
+  let currentNumber = 0;
+  const duration = 1500; // 1.5 seconds total animation
+  const interval = 30; // Update every 30ms
+  const steps = duration / interval;
+  const increment = finalNumber / steps;
+  
+  const counter = setInterval(() => {
+    currentNumber += increment;
+    
+    // Round for display and check if we've reached the target
+    if (currentNumber >= finalNumber) {
+      currentNumber = finalNumber;
+      clearInterval(counter);
+    }
+    
+    // Update the counter display
+    counterElement.textContent = Math.floor(currentNumber);
+  }, interval);
+}
+
+// Get fighter biographical information
+function getFighterBio(fighterId) {
+  // Return customized bio text for each fighter
+  const bios = {
+    'Julius': "Julius Anglickas is a powerful striker known for his explosive takedowns and ground control. The Lithuanian-born fighter has competed at the highest levels of MMA and continues to be a dominant force in the heavyweight division.",
+    
+    'Said': "Said Nurmagomedov is a technical specialist with lightning-fast hands and a diverse kicking arsenal. His exceptional footwork and fight IQ have earned him recognition as one of the most promising fighters in the bantamweight division.",
+    
+    'Ilima': "Ilima-Lei Macfarlane is a submission specialist with a well-rounded skillset. The Hawaiian fighter is known for her tenacity and relentless pressure, making her one of the most exciting welterweights to watch.",
+    
+    'Tyrell': "Tyrell Fortune is an explosive athlete with elite wrestling credentials. His combination of power and technical prowess has established him as a rising star in the middleweight division with knockout potential in both hands.",
+    
+    'Kevin': "Kevin Holland is one of the most unpredictable and entertaining fighters on the roster. With incredible striking versatility and submission skills, 'Trailblazer' is always looking for the finish from any position.",
+    
+    'Grant': "Grant Dawson is a grappling phenom with relentless cardio and determination. His ability to control opponents and find submissions has made him one of the featherweight division's most feared competitors."
+  };
+  
+  // Return the specific fighter's bio or a default message if not found
+  return bios[fighterId] || "This fighter's full profile is coming soon. Check back for updates on their career and upcoming fights.";
 }
