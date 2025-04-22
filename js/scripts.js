@@ -8,6 +8,9 @@ function loadComponent(name) {
         initCareerToggle();
         // Initialize scroll animations
         initScrollAnimations();
+        
+        // Update active navigation links
+        updateActiveNavLinks(name);
       });
   }
   
@@ -15,6 +18,24 @@ function loadComponent(name) {
   document.addEventListener("DOMContentLoaded", () => {
     loadComponent('home');
   });
+  
+  // Function to update active navigation links
+  function updateActiveNavLinks(activePage) {
+    // Remove active class from all navigation links
+    document.querySelectorAll('.navbar .nav-link, .nav-modal-link').forEach(link => {
+      link.classList.remove('active');
+    });
+    
+    // Add active class to desktop navigation links for the current page
+    document.querySelectorAll(`.navbar .nav-link[onclick*="loadComponent('${activePage}')"]`).forEach(link => {
+      link.classList.add('active');
+    });
+    
+    // Add active class to mobile navigation links for the current page
+    document.querySelectorAll(`.nav-modal-link[onclick*="loadComponent('${activePage}')"]`).forEach(link => {
+      link.classList.add('active');
+    });
+  }
 
 // Simple hover up and down animation for pyramid images
 function initPyramidHover() {
