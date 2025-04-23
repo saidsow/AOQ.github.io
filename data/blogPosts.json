@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "AOQ Signs New Fighter Kevin Holland",
+    "excerpt": "AOQ Sports is proud to announce the signing of UFC veteran Kevin Holland to our roster of elite fighters.",
+    "content": "We are thrilled to welcome Kevin 'Trailblazer' Holland to the AOQ Sports family. Kevin brings an impressive record and exciting fighting style that has made him a fan favorite in the UFC's middleweight division. This partnership marks an important step in both Kevin's career and AOQ's growth in the MMA management space.",
+    "image": "assets/Fighters/Kevin.jpg",
+    "author": "AOQ Team",
+    "date": "2025-04-20",
+    "category": "Signings"
+  },
+  {
+    "id": 2,
+    "title": "New Partnership with Sports Betting Agency",
+    "excerpt": "AOQ Sports announces major partnership deal with leading sports betting platform.",
+    "content": "We're excited to announce our new strategic partnership with SportsBetting.com, one of the leading sports betting platforms in the industry. This collaboration will create new opportunities for our athletes while providing exclusive content for sports betting enthusiasts. The multi-year deal includes promotional events, exclusive athlete content, and special betting opportunities for fans.",
+    "image": "assets/Sponsors/sportsbetting.jpg",
+    "author": "Marketing Team",
+    "date": "2025-04-15",
+    "category": "Partnerships"
+  },
+  {
+    "id": 3,
+    "title": "Tyrell Fortune's Next Fight Announced",
+    "excerpt": "Heavyweight prospect Tyrell Fortune prepares for his next big challenge in the cage.",
+    "content": "Mark your calendars! AOQ Sports athlete Tyrell Fortune is set to return to the cage on June 12th, 2025 at Bellator 300. Tyrell has been training intensively for this matchup against a top-10 ranked opponent. The heavyweight prospect aims to continue his impressive winning streak and move closer to title contention with this high-profile bout.",
+    "image": "assets/Fighters/Tyrell.jpg",
+    "author": "Fight Team",
+    "date": "2025-04-10",
+    "category": "Fight Announcements"
+  },
+  {
+    "id": 4,
+    "title": "AOQ Expands into Pickleball",
+    "excerpt": "AOQ Sports broadens its management portfolio by signing elite pickleball players.",
+    "content": "AOQ Sports is proud to announce our expansion into the rapidly growing sport of pickleball. We've signed our first professional pickleball athletes, including national champion Jay Leorever. This strategic move reflects our commitment to diversifying our athlete representation and capitalizing on emerging sports markets. Stay tuned for more exciting announcements as we continue to grow our presence in this exciting sport.",
+    "image": "assets/Pickleball/Jay_LeoRever.jpg",
+    "author": "Business Development",
+    "date": "2025-04-05",
+    "category": "Company Growth"
+  }
+]

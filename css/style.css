@@ -13,7 +13,7 @@
 
 /* Global styles that override Bootstrap defaults */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Vollkorn', serif;
   overflow-x: hidden;
   position: relative;
   /* Removed redundant background-color and color that duplicates bg-black and text-white */
@@ -398,7 +398,7 @@ body {
     border: none;
     border-radius: 30px;
     padding: 10px 25px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Vollkorn', serif;
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
@@ -500,25 +500,31 @@ body {
 }
 
 .pagination-info {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Vollkorn', serif;
     font-size: 14px;
 }
 
 /* Partner Logo Styles */
 .partner-logo {
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .partner-logo:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .partner-logo-img {
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    border-radius: 8px; /* Added border radius for more polished look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added subtle shadow for depth */
 }
 
 .partner-logo:hover .partner-logo-img {
+    filter: grayscale(0);
     opacity: 1 !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
 /* Floating Images Layout for About Page */
@@ -1087,6 +1093,35 @@ body {
 @media (max-width: 768px) {
   .quote-text {
     font-size: 1rem;
+  }
+}
+
+/* Footer Banner Styling */
+.footer-banner {
+  max-width: 15%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.smaller-banner {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.footer-banner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .footer-banner {
+    max-width: 95%;
+  }
+  
+  .smaller-banner {
+    max-width: 80%;
   }
 }
 

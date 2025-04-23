@@ -9,6 +9,11 @@ function loadComponent(name) {
         // Initialize scroll animations
         initScrollAnimations();
         
+        // Load blog posts if on home page
+        if (name === 'home') {
+          loadLatestNews();
+        }
+        
         // Update active navigation links
         updateActiveNavLinks(name);
         // Initialize scroll-triggered image animation
@@ -541,4 +546,326 @@ function getFighterBio(fighterId) {
   
   // Return the specific fighter's bio or a default message if not found
   return bios[fighterId] || "This fighter's full profile is coming soon. Check back for updates on their career and upcoming fights.";
+}
+
+// Function to fetch and display latest blog posts
+function loadLatestNews() {
+  fetch('data/blogPosts.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Sort posts by date (newest first)
+      const sortedPosts = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+      
+      // Get the latest 3 posts
+      const latestPosts = sortedPosts.slice(0, 3);
+      
+      // Get the container for news cards
+      const newsContainer = document.querySelector('.bg-dark.text-white .row.g-4');
+      if (!newsContainer) {
+        console.error('News container not found');
+        return;
+      }
+      
+      // Clear existing content
+      newsContainer.innerHTML = '';
+      
+      // Add each post to the container
+      latestPosts.forEach((post, index) => {
+        // Format the date
+        const postDate = new Date(post.date);
+        const formattedDate = postDate.toLocaleDateString('en-US', { 
+          month: 'short', 
+          day: 'numeric', 
+          year: 'numeric' 
+        }).toUpperCase();
+        
+        // Create the news card HTML
+        const newsCard = document.createElement('div');
+        newsCard.className = `col-lg-4 hidden`;
+        if (index > 0) {
+          newsCard.style.transitionDelay = `${index * 0.2}s`;
+        }
+        
+        newsCard.innerHTML = `
+          <div class="news-card bg-black rounded overflow-hidden">
+            <div class="news-img position-relative">
+              <img src="${post.image}" alt="${post.title}" class="w-100" style="height: 220px; object-fit: cover;">
+              <div class="news-date position-absolute bottom-0 start-0 bg-dark px-3 py-2">
+                <span>${formattedDate}</span>
+              </div>
+            </div>
+            <div class="news-content p-4">
+              <h4 class="mb-3">${post.title}</h4>
+              <p class="opacity-75 mb-4">${post.summary}</p>
+              <a href="#" class="text-decoration-none d-inline-flex align-items-center text-white" 
+                onclick="showBlogPostDetail(${post.id}); return false;">
+                READ MORE <img src="assets/icons/arrow-right.svg" alt="Arrow" width="20" class="ms-2">
+              </a>
+            </div>
+          </div>
+        `;
+        
+        // Add to container
+        newsContainer.appendChild(newsCard);
+      });
+      
+      // Re-initialize scroll animations for the new content
+      initScrollAnimations();
+    })
+    .catch(error => {
+      console.error('Error loading blog posts:', error);
+    });
+}
+
+// Function to show a specific blog post detail
+function showBlogPostDetail(postId) {
+  fetch('data/blogPosts.json')
+    .then(response => response.json())
+    .then(data => {
+      const post = data.find(p => p.id === postId);
+      
+      if (!post) {
+        console.error('Post not found');
+        return;
+      }
+      
+      // Create modal HTML for the blog post
+      const modalHtml = `
+        <div class="modal fade" id="blogPostModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-black text-white">
+              <div class="modal-header border-0">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="blog-post-detail">
+                  <img src="${post.image}" alt="${post.title}" class="w-100 mb-4" style="height: 300px; object-fit: cover;">
+                  <div class="d-flex justify-content-between mb-3">
+                    <span class="text-muted">${new Date(post.date).toLocaleDateString('en-US', { 
+                      month: 'long', 
+                      day: 'numeric', 
+                      year: 'numeric' 
+                    })}</span>
+                  </div>
+                  <h2 class="mb-4">${post.title}</h2>
+                  <div class="blog-content mb-4">
+                    ${post.content.split('\n').map(para => `<p>${para}</p>`).join('')}
+                  </div>
+                  <div class="blog-author d-flex align-items-center mt-5">
+                    <div>
+                      <p class="text-muted mb-0">Posted by <strong>${post.author}</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      // Add modal to body
+      const modalContainer = document.createElement('div');
+      modalContainer.innerHTML = modalHtml;
+      document.body.appendChild(modalContainer);
+      
+      // Show the modal
+      const modal = new bootstrap.Modal(document.getElementById('blogPostModal'));
+      modal.show();
+      
+      // Remove modal from DOM when hidden
+      document.getElementById('blogPostModal').addEventListener('hidden.bs.modal', function () {
+        this.remove();
+      });
+    })
+    .catch(error => {
+      console.error('Error loading blog post:', error);
+    });
+}
+
+// Load all blog posts for a dedicated blog page
+function loadAllBlogPosts(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) {
+    console.error('Blog container not found');
+    return;
+  }
+  
+  fetch('data/blogPosts.json')
+    .then(response => response.json())
+    .then(data => {
+      // Sort posts by date (newest first)
+      const sortedPosts = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+      
+      // Clear existing content
+      container.innerHTML = '';
+      
+      // Add each post to the container
+      sortedPosts.forEach((post, index) => {
+        // Format the date
+        const postDate = new Date(post.date);
+        const formattedDate = postDate.toLocaleDateString('en-US', { 
+          month: 'short', 
+          day: 'numeric', 
+          year: 'numeric' 
+        });
+        
+        // Create the blog post card HTML
+        const postCard = document.createElement('div');
+        postCard.className = 'col-md-6 col-lg-4 mb-4';
+        
+        postCard.innerHTML = `
+          <div class="card h-100 bg-black text-white">
+            <img src="${post.image}" class="card-img-top" alt="${post.title}" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <div class="d-flex justify-content-between mb-3">
+                <span class="text-muted">${formattedDate}</span>
+              </div>
+              <h5 class="card-title">${post.title}</h5>
+              <p class="card-text opacity-75">${post.summary}</p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <a href="#" class="btn btn-outline-light" onclick="showBlogPostDetail(${post.id}); return false;">
+                Read More
+              </a>
+            </div>
+          </div>
+        `;
+        
+        // Add to container
+        container.appendChild(postCard);
+      });
+    })
+    .catch(error => {
+      console.error('Error loading blog posts:', error);
+    });
+}
+
+// Function to load latest news from JSON data
+function loadLatestNews() {
+  fetch('data/blogPosts.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(posts => {
+      displayLatestNews(posts);
+    })
+    .catch(error => {
+      console.error('Error loading news:', error);
+      // Display a fallback message if data can't be loaded
+      const newsContainer = document.getElementById('latest-news-container');
+      if (newsContainer) {
+        newsContainer.innerHTML = '<p class="text-center text-white">Unable to load latest news. Please check back later.</p>';
+      }
+    });
+}
+
+// Function to display the latest news posts
+function displayLatestNews(posts) {
+  const newsContainer = document.getElementById('latest-news-container');
+  if (!newsContainer) return;
+
+  // Sort posts by date (newest first)
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  
+  // Get the 3 most recent posts
+  const recentPosts = posts.slice(0, 3);
+  
+  // Clear the container
+  newsContainer.innerHTML = '';
+  
+  // Add each post to the container
+  recentPosts.forEach((post, index) => {
+    const postElement = document.createElement('div');
+    postElement.className = `col-md-4 hidden news-card`;
+    postElement.style.transitionDelay = `${index * 0.1}s`;
+    
+    // Format the date nicely
+    const postDate = new Date(post.date);
+    const formattedDate = postDate.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+    
+    postElement.innerHTML = `
+      <div class="position-relative overflow-hidden rounded shadow h-100 bg-dark">
+        <div class="news-image-container" style="height: 200px;">
+          <img src="${post.image}" alt="${post.title}" class="w-100 h-100 object-fit-cover">
+          <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-dark text-white rounded">
+            <small>${post.category}</small>
+          </div>
+        </div>
+        <div class="p-4">
+          <p class="text-muted mb-2"><small>${formattedDate} • ${post.author}</small></p>
+          <h4 class="text-white mb-3">${post.title}</h4>
+          <p class="text-white opacity-75">${post.excerpt}</p>
+          <a href="#" class="btn btn-outline-light btn-sm mt-2" onclick="showBlogPostDetails(${post.id}); return false;">Read More</a>
+        </div>
+      </div>
+    `;
+    
+    newsContainer.appendChild(postElement);
+  });
+  
+  // Initialize scroll animations on the news cards
+  initScrollAnimations();
+}
+
+// Function to show blog post details (modal or separate page)
+function showBlogPostDetails(postId) {
+  fetch('data/blogPosts.json')
+    .then(response => response.json())
+    .then(posts => {
+      const post = posts.find(p => p.id === postId);
+      if (post) {
+        // Create modal content
+        const modalContent = `
+          <div class="modal fade" id="blogPostModal" tabindex="-1" aria-labelledby="blogPostModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content bg-dark text-white">
+                <div class="modal-header border-secondary">
+                  <h5 class="modal-title" id="blogPostModalLabel">${post.title}</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-4">
+                    <img src="${post.image}" alt="${post.title}" class="w-100 mb-3" style="max-height: 400px; object-fit: cover;">
+                    <p class="text-muted mb-3"><small>${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} • ${post.author}</small></p>
+                    <hr class="border-secondary mb-4">
+                    <div class="blog-content">
+                      ${post.content.split("\n").map(paragraph => `<p>${paragraph}</p>`).join("")}
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer border-secondary">
+                  <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        // Add modal to body if it doesn't exist
+        if (!document.getElementById('blogPostModal')) {
+          const modalDiv = document.createElement('div');
+          modalDiv.innerHTML = modalContent;
+          document.body.appendChild(modalDiv.firstElementChild);
+        } else {
+          document.getElementById('blogPostModal').outerHTML = modalContent;
+        }
+        
+        // Initialize and show the modal
+        const modal = new bootstrap.Modal(document.getElementById('blogPostModal'));
+        modal.show();
+      }
+    })
+    .catch(error => console.error('Error fetching post details:', error));
 }
