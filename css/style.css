@@ -1005,4 +1005,89 @@ body {
   margin-top: 0.5rem;
 }
 
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.back-to-top i {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.back-to-top:hover i {
+  transform: translateY(-3px);
+}
+
+/* Footer Quote Styling */
+.inspiration-quote {
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.quote-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: #e0e0e0;
+  position: relative;
+}
+
+.quote-text::before,
+.quote-text::after {
+  opacity: 0.4;
+  font-family: Georgia, serif;
+}
+
+.quote-text::before {
+  content: open-quote;
+  margin-right: 4px;
+}
+
+.quote-text::after {
+  content: close-quote;
+  margin-left: 4px;
+}
+
+.quote-attribution {
+  font-size: 0.85rem;
+  color: #aaaaaa;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .quote-text {
+    font-size: 1rem;
+  }
+}
+
 
