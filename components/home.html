@@ -1,7 +1,11 @@
 <!-- Hero Section with Video Background -->
 <section class="hero position-relative vh-100 d-flex align-items-center overflow-hidden p-0">
     <div class="video-container position-absolute h-100 w-100">
-        <video autoplay muted loop class="h-100 w-100 object-fit-cover">
+        <!-- Fallback background image for mobile devices -->
+        <div class="fallback-bg position-absolute top-0 start-0 w-100 h-100" style="background: url('assets/Fillers/AOQ-BG.jpg') no-repeat center center/cover; display: none;"></div>
+        
+        <!-- Video with playsinline attribute for mobile compatibility -->
+        <video autoplay muted loop playsinline class="h-100 w-100 object-fit-cover">
             <source src="assets/Videos/CubeWave.mp4" type="video/mp4">
         </video>
         <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0,0,0,0.65);"></div>

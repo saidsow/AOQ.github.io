@@ -1,5 +1,5 @@
 <!-- About Us -->
-<section class="bg-dark text-white py-5">
+<section class="bg-dark text-white py-5 who-we-are-section">
     <div class="container-fluid">
         <div class="row">
             <div class="col">
@@ -192,6 +192,26 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+    
+    /* Who We Are Section with Background Image */
+    .who-we-are-section {
+        background-image: url('../assets/Fillers/AOQ-BG.jpg');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .who-we-are-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for better text visibility */
+        z-index: -1;
+    }
     
     /* New Quan Card Design */
     .quan-card {

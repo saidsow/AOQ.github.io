@@ -12,6 +12,7 @@ function loadComponent(name) {
         // Load blog posts if on home page
         if (name === 'home') {
           loadLatestNews();
+          handleBackgroundVideo(); // Initialize background video handling
         }
         
         // Update active navigation links
@@ -19,6 +20,45 @@ function loadComponent(name) {
         // Initialize scroll-triggered image animation
         initScrollImages();
       });
+  }
+  
+  // Function to handle background video for different devices
+  function handleBackgroundVideo() {
+    const videoContainer = document.querySelector('.video-container');
+    const video = videoContainer ? videoContainer.querySelector('video') : null;
+    const fallbackBg = videoContainer ? videoContainer.querySelector('.fallback-bg') : null;
+    
+    if (!videoContainer || !video || !fallbackBg) return;
+    
+    // Check if device is mobile
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+    
+    if (isMobile) {
+      // Show fallback image and hide video on mobile
+      fallbackBg.style.display = 'block';
+      video.style.display = 'none';
+    } else {
+      // Show video and hide fallback on desktop
+      fallbackBg.style.display = 'none';
+      video.style.display = 'block';
+      
+      // Handle video loading
+      video.addEventListener('loadeddata', function() {
+        video.play().catch(error => {
+          console.log('Auto-play prevented:', error);
+          // If autoplay fails, show fallback
+          fallbackBg.style.display = 'block';
+          video.style.display = 'none';
+        });
+      });
+      
+      // Handle video errors
+      video.addEventListener('error', function() {
+        console.log('Video error occurred');
+        fallbackBg.style.display = 'block';
+        video.style.display = 'none';
+      });
+    }
   }
   
   // Load home by default
@@ -869,3 +909,37 @@ function showBlogPostDetails(postId) {
     })
     .catch(error => console.error('Error fetching post details:', error));
 }
+
+// Function to handle background video for mobile devices
+document.addEventListener('DOMContentLoaded', function() {
+    const videoContainer = document.querySelector('.video-container');
+    if (videoContainer) {
+        const video = videoContainer.querySelector('video');
+        const fallbackBg = videoContainer.querySelector('.fallback-bg');
+        
+        // Check if device is mobile
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        if (isMobile) {
+            // Show fallback background for mobile devices
+            if (fallbackBg) fallbackBg.style.display = 'block';
+            
+            // Handle video element
+            if (video) {
+                // Try to play the video anyway (will work on some mobile devices)
+                const playPromise = video.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        // Playback started successfully, keep video visible
+                        video.style.display = 'block';
+                    })
+                    .catch(error => {
+                        // Auto-play was prevented, hide video and rely on fallback
+                        video.style.display = 'none';
+                    });
+                }
+            }
+        }
+    }
+});
