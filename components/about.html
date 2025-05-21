@@ -1122,7 +1122,10 @@
     
     .journey-quote-container {
         position: relative;
-        background: rgba(20, 20, 20, 0.9);
+        background: rgba(20, 20, 20, 0.85);
+        background-image: url('../assets/Fillers/teamwork.jpg');
+        background-size: cover;
+        background-position: center;
         border-radius: 12px;
         padding: 2rem;
         margin-top: -70px;
@@ -1130,6 +1133,18 @@
         margin-right: 20px;
         box-shadow: 0 15px 30px rgba(0,0,0,0.5);
         z-index: 5;
+    }
+    
+    .journey-quote-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.75);
+        border-radius: 12px;
+        z-index: -1;
     }
     
     .journey-quote {
