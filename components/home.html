@@ -29,27 +29,13 @@
         class="col-12 hero-content ps-4 ps-lg-5 ms-0 mb-5 position-absolute bottom-0 start-0 hidden"
       >
         <div class="fade-in-text mb-5 pb-5">
-          <h1 class="display-1 fw-bold mb-4 text-white line-font">
-            <span>A</span><span>O</span><span>Q</span> <span>S</span
-            ><span>P</span><span>O</span><span>R</span><span>T</span
-            ><span>S</span>
-          </h1>
-          <p class="lead text-white mb-5 ps-2 opacity-75">
-            ELEVATING ATHLETES. ELEVATING BRANDS.
-          </p>
-          <div class="d-flex flex-wrap gap-3 ps-2">
-            <a
-              href="#"
-              onclick="loadComponent('about')"
-              class="btn btn-outline-light btn-lg"
-              >ABOUT US</a
-            >
-            <a
-              href="#"
-              onclick="loadComponent('career')"
-              class="btn btn-outline-light btn-lg"
-              >THE TEAM</a
-            >
+          <div class="hero-logo mb-4">
+            <img
+              src="assets/logo/AOQ_Bannar.jpg"
+              alt="AOQ Sports Logo"
+              class="img-fluid hero-logo-img"
+              style="max-height: 200px; width: auto"
+            />
           </div>
         </div>
       </div>
@@ -60,25 +46,28 @@
 <!-- Scrolling Text Banner -->
 <section class="bg-black overflow-hidden">
   <div class="scrolling-text-container">
-    <div class="scrolling-text text-white">
-      <span>A</span><span>T</span><span>H</span><span>L</span><span>E</span
-      ><span>T</span><span>E</span><span>S</span> • <span>O</span><span>P</span
-      ><span>P</span><span>O</span><span>R</span><span>T</span><span>U</span
-      ><span>N</span><span>I</span><span>T</span><span>I</span><span>E</span
-      ><span>S</span> • <span>Q</span><span>U</span><span>A</span><span>L</span
-      ><span>I</span><span>T</span><span>Y</span> • <span>A</span><span>T</span
-      ><span>H</span><span>L</span><span>E</span><span>T</span><span>E</span
-      ><span>S</span> • <span>O</span><span>P</span><span>P</span><span>O</span
-      ><span>R</span><span>T</span><span>U</span><span>N</span><span>I</span
-      ><span>T</span><span>I</span><span>E</span><span>S</span> • <span>Q</span
-      ><span>U</span><span>A</span><span>L</span><span>I</span><span>T</span
-      ><span>Y</span>
+    <!-- Modern Quan Definition -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <div class="quan-card">
+          <div class="quan-card-inner">
+            <h2 class="quan-title text-center">
+              quan<span class="quan-phonetic"> /kwän/</span>
+            </h2>
+            <div class="quan-divider"></div>
+            <p class="quan-text text-center">
+              <em>noun</em> ~ Love, respect, community and the dollars too. The
+              entire package.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Services Section with Animated Cards -->
-<section
+<!-- <section
   id="services"
   class="bg-black text-white py-5 py-lg-6 d-lg-flex align-items-lg-center vh-100-lg"
 >
@@ -227,14 +216,11 @@
   </div>
 </section>
 
-<!-- Featured Athletes Section with Dynamic Hover Effects and Selection -->
 <section class="bg-black text-white py-6" style="min-height: 800px">
   <div class="container-fluid px-4 px-lg-5 py-5">
     <h2 class="text-center display-3 mb-5 line-font hidden">OUR FIGHTERS</h2>
 
-    <!-- Fighter thumbnails in a row -->
     <div class="row g-3 justify-content-center mb-5">
-      <!-- Fighter 1 -->
       <div
         class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail"
         style="transition-delay: 0s"
@@ -265,7 +251,6 @@
         </div>
       </div>
 
-      <!-- Fighter 2 -->
       <div
         class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail"
         style="transition-delay: 0.1s"
@@ -296,7 +281,6 @@
         </div>
       </div>
 
-      <!-- Fighter 3 -->
       <div
         class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail"
         style="transition-delay: 0.2s"
@@ -327,7 +311,6 @@
         </div>
       </div>
 
-      <!-- Fighter 4 -->
       <div
         class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail"
         style="transition-delay: 0.3s"
@@ -358,7 +341,6 @@
         </div>
       </div>
 
-      <!-- Fighter 5 -->
       <div
         class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail"
         style="transition-delay: 0.4s"
@@ -389,7 +371,6 @@
         </div>
       </div>
 
-      <!-- Fighter 6 -->
       <div
         class="col-4 col-md-2 col-lg-1 hidden fighter-thumbnail"
         style="transition-delay: 0.6s"
@@ -421,7 +402,6 @@
       </div>
     </div>
 
-    <!-- -->
     <div class="row"></div>
 
     <div class="text-center mt-5 hidden">
@@ -435,7 +415,6 @@
   </div>
 </section>
 
-<!-- Statistics Section with Animated Counters -->
 <section class="bg-black text-white py-5">
   <div class="container-fluid px-4 px-lg-5">
     <div class="row g-4 justify-content-center">
@@ -484,7 +463,6 @@
   </div>
 </section>
 
-<!-- Partners/Sponsors Section with Logo Carousel -->
 <section class="bg-black text-white py-5">
   <div class="container-fluid px-4 px-lg-5">
     <h2 class="text-center display-4 mb-5 line-font hidden">OUR PARTNERS</h2>
@@ -540,7 +518,6 @@
   </div>
 </section>
 
-<!-- CTA Section with Parallax Effect -->
 <section
   class="cta position-relative py-5 d-flex align-items-center"
   style="
@@ -583,7 +560,6 @@
   </div>
 </section>
 
-<!-- Latest News Section -->
 <section class="bg-dark text-white py-5">
   <div class="container-fluid px-4 px-lg-5">
     <div class="d-flex justify-content-between align-items-center mb-5">
@@ -597,12 +573,10 @@
     </div>
 
     <div class="row g-4" id="latest-news-container">
-      <!-- News cards will be dynamically inserted here by JavaScript -->
     </div>
   </div>
 </section>
 
-<!-- Testimonials Section -->
 <section class="py-5" id="testimonials">
   <div class="container px-4 px-lg-5">
     <div class="row justify-content-center mb-4">
@@ -714,6 +688,7 @@
     </div>
   </div>
 </section>
+-->
 
 <style>
   /* Hero Section Styling */
@@ -791,6 +766,99 @@
     60% {
       transform: translateY(-5px);
     }
+  }
+
+  /* New Quan Card Design */
+  .quan-card {
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s ease;
+    margin: 0 auto;
+    max-width: 600px;
+    font-family: "Bitter", serif;
+  }
+
+  .quan-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent
+    );
+    transform: rotate(45deg);
+    z-index: -1;
+    animation: shimmer 6s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) rotate(45deg);
+    }
+  }
+
+  .quan-card-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quan-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #ffffff, #aaaaaa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    display: inline-block;
+    letter-spacing: -1px;
+    font-family: "Bitter", serif;
+  }
+
+  .quan-phonetic {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.7;
+    font-style: italic;
+    color: #ffffff;
+    background: none;
+    -webkit-text-fill-color: #ffffff; /* Override any transparent fill from parent */
+    filter: none; /* Remove any shadow effects inherited from parent */
+  }
+
+  .quan-divider {
+    width: 80px;
+    height: 2px;
+    margin: 0.5rem auto 1.5rem;
+    background: linear-gradient(to right, transparent, #ffffff, transparent);
+    position: relative;
+    left: -20px; /* Shift it to align with "quan" */
+  }
+
+  .quan-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    font-weight: 300;
+    width: 100%;
+    font-family: "Bitter", serif;
   }
 
   /* New styles for active fighter selection */
