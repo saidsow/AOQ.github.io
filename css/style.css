@@ -308,6 +308,41 @@ body {
   #services.py-5 {
     padding-top: 0.5rem !important;
   }
+  
+  body,
+  .container-fluid,
+  .lead,
+  p,
+  .quan-text {
+    font-size: 1.15rem !important;
+  }
+  h1,
+  .display-1,
+  .display-2,
+  .display-3,
+  .display-4 {
+    font-size: 2.2rem !important;
+  }
+  h2,
+  .line-font,
+  .quan-title {
+    font-size: 2rem !important;
+  }
+  h3 {
+    font-size: 1.5rem !important;
+  }
+  h4 {
+    font-size: 1.2rem !important;
+  }
+  .navbar .nav-link,
+  .nav-modal-link {
+    font-size: 1.1rem !important;
+  }
+  .btn,
+  .btn-lg {
+    font-size: 1.1rem !important;
+    padding: 0.75rem 1.5rem !important;
+  }
 }
 
 /* Service Cards Styling - Enhanced for the What We Do section */
@@ -687,6 +722,41 @@ body {
     #services.py-5 {
         padding-top: 1rem !important;
     }
+  
+  body,
+  .container-fluid,
+  .lead,
+  p,
+  .quan-text {
+    font-size: 1.15rem !important;
+  }
+  h1,
+  .display-1,
+  .display-2,
+  .display-3,
+  .display-4 {
+    font-size: 2.2rem !important;
+  }
+  h2,
+  .line-font,
+  .quan-title {
+    font-size: 2rem !important;
+  }
+  h3 {
+    font-size: 1.5rem !important;
+  }
+  h4 {
+    font-size: 1.2rem !important;
+  }
+  .navbar .nav-link,
+  .nav-modal-link {
+    font-size: 1.1rem !important;
+  }
+  .btn,
+  .btn-lg {
+    font-size: 1.1rem !important;
+    padding: 0.75rem 1.5rem !important;
+  }
 }
 
 /* Slide-in Navigation Modal */
